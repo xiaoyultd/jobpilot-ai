@@ -29,6 +29,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
 .search-result-card a{margin-top:auto;color:var(--green);font-size:12px;font-weight:700;text-decoration:none}.search-result-card a:active{opacity:.7}.search-result-card{overflow-wrap:anywhere}
 @media(max-width:760px){.search-result-grid{grid-template-columns:minmax(0,1fr)}.directory-card{min-height:0;padding:16px}.directory-card a{min-height:42px;display:flex;align-items:center}.match-actions button{min-height:48px}.match-form select,.match-form input{min-height:46px}}
 .directory-more{margin-top:24px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px}.directory-more summary{cursor:pointer;color:var(--green);font-weight:700}.directory-more p{font-size:13px;line-height:1.7}.directory-card a{padding:10px 0;min-height:44px}.match-actions .outline{min-height:46px}@media(max-width:760px){#jobs .page-title{margin-bottom:22px}#jobs .page-title h1{font-size:30px;line-height:1.2}.directory-card b{font-size:16px}.directory-card small{font-size:13px}.directory-card a{font-size:14px}}
+.salary-reference{margin:16px 0 22px}.salary-reference h3{font-size:18px;margin:0 0 8px}.salary-reference h3 small{font-size:12px;color:var(--green);font-weight:500}.salary-reference>p{color:var(--muted);font-size:12px;line-height:1.6}.salary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.salary-grid a{display:grid;gap:7px;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);text-decoration:none}.salary-grid strong{color:var(--green);font-size:17px}.salary-grid small{color:var(--muted);line-height:1.5}.salary-grid span{color:var(--green);font-size:12px}@media(max-width:760px){.salary-grid{grid-template-columns:1fr}.salary-grid a{min-height:44px}}
 .modal.open[aria-hidden="true"]{display:none}
 </style>
 </head>
@@ -103,8 +104,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
           <label>搜索企业或行业<input id="jobSearch" type="search" placeholder="例如：珠江啤酒、水处理" value=""></label>
           <input id="candidateSkills" type="hidden">
           <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（100家，水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
+          <label>地区<select id="directoryRegion" aria-label="地区"><option value="all">全部地区</option><option value="zengcheng">增城</option><option value="guangzhou">广州（含增城）</option><option value="guangdong">广东（含广州）</option><option value="other">其他已标明地区</option><option value="national">全国（地点未细分）</option></select></label>
           <div class="match-actions"><button type="button" class="solid" id="searchDirectoryBtn">查看企业</button><button type="button" class="outline" id="resetDirectoryBtn">重置条件</button></div>
-          <p class="match-hint">这是企业目录。打开官网后，请在招聘栏目确认岗位是否开放。</p>
+          <p class="match-hint">地区按目录中标注的企业所在地筛选，具体岗位地点请在官网招聘栏目确认。</p>
         </div>
         <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>选择行业后，点击“搜索企业目录”</b><p>会显示企业名称、行业、经营年份和真实官网入口；招聘以企业官网当前公告为准。</p></div></div>
         <details class="directory-more"><summary>更多官方招聘入口和名单来源</summary><p><a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10677014.html">广州老字号名单</a> · <a href="https://gxj.gz.gov.cn/yw/tzgg/content/post_9225219.html">广州优质中小企业名单</a></p>
@@ -303,6 +305,7 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
   const button = document.querySelector('#searchDirectoryBtn');
   const panel = document.querySelector('#searchResults');
   const sector = document.querySelector('#industryFilter');
+  const region = document.querySelector('#directoryRegion');
   const role = document.querySelector('#jobSearch');
   const skills = document.querySelector('#candidateSkills');
   if (!button || !panel) return;
@@ -319,6 +322,14 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
   function renderDirectory(scroll = true) {
     const chosenSector = sector?.value || 'all';
     let list = directory.filter(company => chosenSector === 'all' || company.industry === chosenSector);
+    const chosenRegion = region?.value || 'all';
+    const inGuangdong = city => /广东|广州|增城|深圳|佛山|珠海|惠州|云浮|湛江/.test(city);
+    list = list.filter(company => chosenRegion === 'all' ||
+      (chosenRegion === 'zengcheng' && company.city.includes('增城')) ||
+      (chosenRegion === 'guangzhou' && /广州|增城/.test(company.city)) ||
+      (chosenRegion === 'guangdong' && inGuangdong(company.city)) ||
+      (chosenRegion === 'other' && company.city !== '全国' && !inGuangdong(company.city)) ||
+      (chosenRegion === 'national' && company.city === '全国'));
     const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'consumer'];
     list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || a.year - b.year);
 
@@ -344,14 +355,18 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
       </article>`).join('');
     const total = directory.length;
     const title = chosenSector === 'all' ? `企业目录：${list.length} 家` : `${esc(sectorNames[chosenSector])}：${list.length} 家`;
-    const note = [keywordNote, `共收录 ${total} 家企业。品牌沿革年份与法人注册时间可能不同，岗位和待遇以官网公告为准。`].filter(Boolean).join('。');
-    panel.innerHTML = `<div class="search-results-head"><div><span class="eyebrow">企业目录 · 按行业及品牌沿革整理</span><h3>${title}</h3><p>${esc(note)}</p></div></div>${cards ? `<div class="search-result-grid">${cards}</div>` : '<div class="empty-state"><b>没有找到匹配的企业</b><p>试试更短的企业名，或点击上方“重置条件”。</p></div>'}`;
+    const regionLabel = region?.selectedOptions?.[0]?.textContent || '全部地区';
+    const note = [`地区：${regionLabel}`, keywordNote, `共收录 ${total} 家企业。地区为目录中标注的企业所在地，具体岗位地点和待遇以官网公告为准。品牌沿革年份与法人注册时间可能不同。`].filter(Boolean).join('。');
+    const showSalary = ['all','water','equipment'].includes(chosenSector) && ['all','zengcheng','guangzhou','guangdong'].includes(chosenRegion);
+    const salary = showSalary ? `<section class="salary-reference"><h3>职位与薪资参考 <small>增城招聘样本</small></h3><p>以下为招聘平台公开样本，核对日期 2026-10-30；不代表下方企业的薪资，也不保证仍在招聘。</p><div class="salary-grid"><a href="https://www.zhaopin.com/jobdetail/CC514434030J41021598002.htm" target="_blank" rel="noopener noreferrer"><b>环保水处理技术员</b><strong>7,000–10,000 元/月</strong><small>工大环境 · 增城 · 大专 · 1–3年</small><span>查看招聘原文 ↗</span></a><a href="https://www.zhaopin.com/sou/jl763/kwDGQ5I13K0PEUAUGBBO40" target="_blank" rel="noopener noreferrer"><b>废水处理值班技师</b><strong>6,000–8,000 元/月</strong><small>湖南航天凯天水务 · 增城 · 3–5年 · 倒班</small><span>查看招聘来源 ↗</span></a><a href="https://m.zhaopin.com/zhaopin/9ccbd1bee88e4a2e8089024bd9b5ff6b/" target="_blank" rel="noopener noreferrer"><b>环境检测员</b><strong>4,000–7,000 元/月</strong><small>公用环境检测（广州）· 增城 · 1–3年</small><span>查看招聘来源 ↗</span></a></div></section>` : '';
+    panel.innerHTML = `<div class="search-results-head"><div><span class="eyebrow">企业目录 · 按行业及品牌沿革整理</span><h3>${title}</h3><p>${esc(note)}</p></div></div>${salary}${cards ? `<div class="search-result-grid">${cards}</div>` : '<div class="empty-state"><b>没有找到匹配的企业</b><p>试试更短的企业名，或点击上方“重置条件”。</p></div>'}`;
     if (scroll) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   button.addEventListener('click', () => renderDirectory());
-  document.querySelector('#resetDirectoryBtn')?.addEventListener('click', () => { role.value = ''; sector.value = 'all'; renderDirectory(false); role.focus(); });
+  document.querySelector('#resetDirectoryBtn')?.addEventListener('click', () => { role.value = ''; sector.value = 'all'; if (region) region.value = 'all'; renderDirectory(false); role.focus(); });
   sector?.addEventListener('change', () => renderDirectory(false));
+  region?.addEventListener('change', () => renderDirectory(false));
   role?.addEventListener('keydown', event => {
     if (event.key === 'Enter') { event.preventDefault(); event.stopImmediatePropagation(); renderDirectory(); }
   }, true);

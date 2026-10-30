@@ -106,6 +106,7 @@ window.COMPANY_DIRECTORY = [
   const button = document.querySelector('#searchDirectoryBtn');
   const panel = document.querySelector('#searchResults');
   const sector = document.querySelector('#industryFilter');
+  const region = document.querySelector('#directoryRegion');
   const role = document.querySelector('#jobSearch');
   const skills = document.querySelector('#candidateSkills');
   if (!button || !panel) return;
@@ -122,6 +123,14 @@ window.COMPANY_DIRECTORY = [
   function renderDirectory(scroll = true) {
     const chosenSector = sector?.value || 'all';
     let list = directory.filter(company => chosenSector === 'all' || company.industry === chosenSector);
+    const chosenRegion = region?.value || 'all';
+    const inGuangdong = city => /广东|广州|增城|深圳|佛山|珠海|惠州|云浮|湛江/.test(city);
+    list = list.filter(company => chosenRegion === 'all' ||
+      (chosenRegion === 'zengcheng' && company.city.includes('增城')) ||
+      (chosenRegion === 'guangzhou' && /广州|增城/.test(company.city)) ||
+      (chosenRegion === 'guangdong' && inGuangdong(company.city)) ||
+      (chosenRegion === 'other' && company.city !== '全国' && !inGuangdong(company.city)) ||
+      (chosenRegion === 'national' && company.city === '全国'));
     const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'consumer'];
     list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || a.year - b.year);
 
@@ -147,14 +156,18 @@ window.COMPANY_DIRECTORY = [
       </article>`).join('');
     const total = directory.length;
     const title = chosenSector === 'all' ? `企业目录：${list.length} 家` : `${esc(sectorNames[chosenSector])}：${list.length} 家`;
-    const note = [keywordNote, `共收录 ${total} 家企业。品牌沿革年份与法人注册时间可能不同，岗位和待遇以官网公告为准。`].filter(Boolean).join('。');
-    panel.innerHTML = `<div class="search-results-head"><div><span class="eyebrow">企业目录 · 按行业及品牌沿革整理</span><h3>${title}</h3><p>${esc(note)}</p></div></div>${cards ? `<div class="search-result-grid">${cards}</div>` : '<div class="empty-state"><b>没有找到匹配的企业</b><p>试试更短的企业名，或点击上方“重置条件”。</p></div>'}`;
+    const regionLabel = region?.selectedOptions?.[0]?.textContent || '全部地区';
+    const note = [`地区：${regionLabel}`, keywordNote, `共收录 ${total} 家企业。地区为目录中标注的企业所在地，具体岗位地点和待遇以官网公告为准。品牌沿革年份与法人注册时间可能不同。`].filter(Boolean).join('。');
+    const showSalary = ['all','water','equipment'].includes(chosenSector) && ['all','zengcheng','guangzhou','guangdong'].includes(chosenRegion);
+    const salary = showSalary ? `<section class="salary-reference"><h3>职位与薪资参考 <small>增城招聘样本</small></h3><p>以下为招聘平台公开样本，核对日期 2026-10-30；不代表下方企业的薪资，也不保证仍在招聘。</p><div class="salary-grid"><a href="https://www.zhaopin.com/jobdetail/CC514434030J41021598002.htm" target="_blank" rel="noopener noreferrer"><b>环保水处理技术员</b><strong>7,000–10,000 元/月</strong><small>工大环境 · 增城 · 大专 · 1–3年</small><span>查看招聘原文 ↗</span></a><a href="https://www.zhaopin.com/sou/jl763/kwDGQ5I13K0PEUAUGBBO40" target="_blank" rel="noopener noreferrer"><b>废水处理值班技师</b><strong>6,000–8,000 元/月</strong><small>湖南航天凯天水务 · 增城 · 3–5年 · 倒班</small><span>查看招聘来源 ↗</span></a><a href="https://m.zhaopin.com/zhaopin/9ccbd1bee88e4a2e8089024bd9b5ff6b/" target="_blank" rel="noopener noreferrer"><b>环境检测员</b><strong>4,000–7,000 元/月</strong><small>公用环境检测（广州）· 增城 · 1–3年</small><span>查看招聘来源 ↗</span></a></div></section>` : '';
+    panel.innerHTML = `<div class="search-results-head"><div><span class="eyebrow">企业目录 · 按行业及品牌沿革整理</span><h3>${title}</h3><p>${esc(note)}</p></div></div>${salary}${cards ? `<div class="search-result-grid">${cards}</div>` : '<div class="empty-state"><b>没有找到匹配的企业</b><p>试试更短的企业名，或点击上方“重置条件”。</p></div>'}`;
     if (scroll) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   button.addEventListener('click', () => renderDirectory());
-  document.querySelector('#resetDirectoryBtn')?.addEventListener('click', () => { role.value = ''; sector.value = 'all'; renderDirectory(false); role.focus(); });
+  document.querySelector('#resetDirectoryBtn')?.addEventListener('click', () => { role.value = ''; sector.value = 'all'; if (region) region.value = 'all'; renderDirectory(false); role.focus(); });
   sector?.addEventListener('change', () => renderDirectory(false));
+  region?.addEventListener('change', () => renderDirectory(false));
   role?.addEventListener('keydown', event => {
     if (event.key === 'Enter') { event.preventDefault(); event.stopImmediatePropagation(); renderDirectory(); }
   }, true);

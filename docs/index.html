@@ -81,8 +81,9 @@
           <label>搜索企业或行业<input id="jobSearch" type="search" placeholder="例如：珠江啤酒、水处理" value=""></label>
           <input id="candidateSkills" type="hidden">
           <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（100家，水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
+          <label>地区<select id="directoryRegion" aria-label="地区"><option value="all">全部地区</option><option value="zengcheng">增城</option><option value="guangzhou">广州（含增城）</option><option value="guangdong">广东（含广州）</option><option value="other">其他已标明地区</option><option value="national">全国（地点未细分）</option></select></label>
           <div class="match-actions"><button type="button" class="solid" id="searchDirectoryBtn">查看企业</button><button type="button" class="outline" id="resetDirectoryBtn">重置条件</button></div>
-          <p class="match-hint">这是企业目录。打开官网后，请在招聘栏目确认岗位是否开放。</p>
+          <p class="match-hint">地区按目录中标注的企业所在地筛选，具体岗位地点请在官网招聘栏目确认。</p>
         </div>
         <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>选择行业后，点击“搜索企业目录”</b><p>会显示企业名称、行业、经营年份和真实官网入口；招聘以企业官网当前公告为准。</p></div></div>
         <details class="directory-more"><summary>更多官方招聘入口和名单来源</summary><p><a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10677014.html">广州老字号名单</a> · <a href="https://gxj.gz.gov.cn/yw/tzgg/content/post_9225219.html">广州优质中小企业名单</a></p>
