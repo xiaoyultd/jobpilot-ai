@@ -124,7 +124,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
         <div class="match-form">
           <label>搜索企业或行业<input id="jobSearch" type="search" placeholder="例如：珠江啤酒、水处理" value=""></label>
           <input id="candidateSkills" type="hidden">
-          <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="internet">互联网 / 科技</option><option value="trade">贸易 / 供应链</option><option value="finance">金融 / 银行 / 证券</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
+          <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="testing">检测 / 检验 / 认证</option><option value="internet">互联网 / 科技</option><option value="trade">贸易 / 供应链</option><option value="finance">金融 / 银行 / 证券</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
           <label>地区<select id="directoryRegion" aria-label="地区"><option value="all">全部地区</option><option value="zengcheng">增城</option><option value="guangzhou">广州（含增城）</option><option value="guangdong">广东（含广州）</option><option value="other">其他已标明地区</option><option value="national">全国（地点未细分）</option></select></label>
           <div class="match-actions"><button type="button" class="solid" id="searchDirectoryBtn">查看企业</button><button type="button" class="outline" id="resetDirectoryBtn">重置条件</button></div>
           <p class="match-hint">地区按目录中标注的企业所在地筛选。链接连接检查日期为2026-10-30；微信里的访问情况可能不同。职位记录不会自动更新，超过7天会提示重新核实。</p>
@@ -348,7 +348,15 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
   {name:'海德（广州）国际物流集团有限公司',industry:'trade',city:'广州·广东',year:2008,url:'https://hydeindustry.com/cn/guanyuwomen-a9-1.html',badge:'国际物流与贸易',featured:true,position:'海外销售（官网列出，开放状态待确认）',salary:'官网未公开；详情请核对招聘页',checked:'2026-10-30'},
   {name:'增城市金点食品有限公司',industry:'beverage',city:'广州·增城',year:2001,url:'https://www.gdjindian.cn/history.html',badge:'烘焙食品原料',featured:true},
   {name:'立高食品股份有限公司',industry:'beverage',city:'广州·增城',year:2000,url:'https://www.ligaofoods.com/',badge:'烘焙食品',featured:true},
-  {name:'广州亿通食品机械设备有限公司',industry:'equipment',city:'广州·增城',year:2003,url:'https://www.ytongjx.com/list.asp?classid=6',badge:'食品机械设备',featured:true}
+  {name:'广州亿通食品机械设备有限公司',industry:'equipment',city:'广州·增城',year:2003,url:'https://www.ytongjx.com/list.asp?classid=6',badge:'食品机械设备',featured:true},
+  {name:'广州邦禾检测技术有限公司',industry:'testing',city:'广州·广东',year:2007,url:'https://www.mcmtek.com/cn/list_38.aspx',badge:'电池检测认证·官网招聘栏目',featured:true},
+  {name:'广州检验检测认证集团有限公司',industry:'testing',city:'广州·广东',year:2016,url:'https://www.gzgjjt.cn/category/%E4%BA%BA%E6%89%8D%E6%8B%9B%E8%81%98',badge:'综合检验检测·官网招聘公告'},
+  {name:'广电计量检测集团',industry:'testing',city:'广州·广东',year:2002,url:'https://www.grgtest.com/',badge:'计量检测·企业官网'},
+  {name:'华测检测认证集团',industry:'testing',city:'深圳·广东',year:2003,url:'https://lab.cti-cert.com/jrwm',badge:'综合检测·官方招聘栏目'},
+  {name:'广州广能信达检测科技有限公司',industry:'testing',city:'广州·广东',year:2016,url:'https://www.gzgnxd.com/',badge:'电力检测·省级专精特新',featured:true},
+  {name:'中科认证技术服务（广州）有限公司',industry:'testing',city:'广州·广东',year:2021,url:'https://www.cas-c.cn/job/',badge:'认证与评价·官方招聘栏目',featured:true},
+  {name:'中科检测技术服务（广州）股份有限公司',industry:'testing',city:'广州·广东',year:1958,url:'https://www.cas-test.net/about/index.html',badge:'综合检测·业务沿革',featured:true},
+  {name:'广东广纺检测技术股份有限公司',industry:'testing',city:'广州·广东',year:1959,url:'https://www.gzfzs.com/History.html',badge:'纺织检测·业务沿革',featured:true}
 ];
 
 (() => {
@@ -365,7 +373,7 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
     water: '水务环保 / 水处理', equipment: '水处理设备 / 制造',
     beverage: '饮料 / 食品 / 乳品', aquatic: '水产 / 养殖 / 海洋食品',
     logistics: '港口 / 航运 / 物流', consumer: '成熟消费 / 医药 / 家电',
-    internet: '互联网 / 科技', trade: '贸易 / 供应链', finance: '金融 / 银行 / 证券'
+    internet: '互联网 / 科技', trade: '贸易 / 供应链', finance: '金融 / 银行 / 证券', testing: '检测 / 检验 / 认证'
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -409,7 +417,7 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
       (chosenRegion === 'guangdong' && inGuangdong(company.city)) ||
       (chosenRegion === 'other' && company.city !== '全国' && !inGuangdong(company.city)) ||
       (chosenRegion === 'national' && company.city === '全国'));
-    const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'internet', 'trade', 'finance', 'consumer'];
+    const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'testing', 'internet', 'trade', 'finance', 'consumer'];
     list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || a.year - b.year);
 
     const keywords = (role?.value || '').trim().toLocaleLowerCase();
