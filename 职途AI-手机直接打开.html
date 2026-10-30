@@ -30,6 +30,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
 @media(max-width:760px){.search-result-grid{grid-template-columns:minmax(0,1fr)}.directory-card{min-height:0;padding:16px}.directory-card a{min-height:42px;display:flex;align-items:center}.match-actions button{min-height:48px}.match-form select,.match-form input{min-height:46px}}
 .directory-more{margin-top:24px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px}.directory-more summary{cursor:pointer;color:var(--green);font-weight:700}.directory-more p{font-size:13px;line-height:1.7}.directory-card a{padding:10px 0;min-height:44px}.match-actions .outline{min-height:46px}@media(max-width:760px){#jobs .page-title{margin-bottom:22px}#jobs .page-title h1{font-size:30px;line-height:1.2}.directory-card b{font-size:16px}.directory-card small{font-size:13px}.directory-card a{font-size:14px}}
 .salary-reference{margin:16px 0 22px}.salary-reference h3{font-size:18px;margin:0 0 8px}.salary-reference h3 small{font-size:12px;color:var(--green);font-weight:500}.salary-reference>p{color:var(--muted);font-size:12px;line-height:1.6}.salary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.salary-grid a{display:grid;gap:7px;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);text-decoration:none}.salary-grid strong{color:var(--green);font-size:17px}.salary-grid small{color:var(--muted);line-height:1.5}.salary-grid span{color:var(--green);font-size:12px}@media(max-width:760px){.salary-grid{grid-template-columns:1fr}.salary-grid a{min-height:44px}}
+.local-companies{margin:0 0 20px;padding:18px;background:#e5f2e9;border:1px solid #cbded0;border-radius:16px}.local-companies summary{cursor:pointer;color:#173f33;font-size:18px;font-weight:700;line-height:1.5}.local-companies summary small{display:block;margin:4px 0 0;font-size:12px;font-weight:400;color:#536b5e}.local-companies>p,.local-companies>small{color:#536b5e;font-size:12px;line-height:1.6}.local-company-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.local-company-grid article{display:grid;gap:8px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:12px}.local-company-grid article span,.local-company-grid article p{color:var(--muted);font-size:12px;line-height:1.6;margin:0}.local-company-grid article a{display:inline-block;color:var(--green);font-size:13px;font-weight:700;padding:8px 0}.local-companies>small{display:block;margin-top:12px}@media(max-width:760px){.local-company-grid{grid-template-columns:1fr}.local-company-grid article a{min-height:44px;display:flex;align-items:center}}
 .modal.open[aria-hidden="true"]{display:none}
 </style>
 </head>
@@ -100,6 +101,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
 
       <section class="view" id="jobs">
         <div class="page-title"><p class="eyebrow">企业目录 · 100家</p><h1>找到值得了解的企业</h1><p>选行业或输入企业名称，查看公司官网和招聘入口。</p></div>
+        <details class="local-companies" id="zengchengCompanies"><summary><span>增城企业 · 10年以上</span><small>4家公开资料可查的候选企业，点击展开</small></summary><p>按企业成立时间和增城经营信息整理。企业名单不代表目前有空缺岗位，请进入招聘入口确认岗位、工作地点和待遇。</p><div class="local-company-grid">
+          <article><b>增城市金点食品有限公司</b><span>食品原料 · 石滩镇 · 2001年成立</span><p>企业官网介绍其总部位于增城，从事烘焙原料。</p><a href="https://www.gdjindian.cn/history.html" target="_blank" rel="noopener noreferrer">查看企业官网 ↗</a></article>
+          <article><b>广州亿通食品机械设备有限公司</b><span>食品机械 · 增城低碳总部园 · 2003年成立</span><p>企业官网介绍其2019年入驻增城总部园，主要从事食品机械。</p><a href="https://www.ytongjx.com/list.asp?classid=6" target="_blank" rel="noopener noreferrer">查看企业官网 ↗</a></article>
+          <article><b>立高食品股份有限公司</b><span>烘焙食品 · 增城成立 · 2000年成立</span><p>增城区政府曾公布其石滩总部基地项目信息；具体岗位地点需确认。</p><a href="https://www.ligaofoods.com/" target="_blank" rel="noopener noreferrer">查看企业官网 ↗</a> <a href="https://www.zc.gov.cn/zx/zcyw/content/post_8360712.html" target="_blank" rel="noopener noreferrer">查看政府资料 ↗</a></article>
+          <article><b>广汽本田汽车有限公司</b><span>汽车制造 · 增城新塘工厂 · 1998年成立</span><p>本田中国公布增城工厂2006年投产；招聘岗位可能分布在不同厂区。</p><a href="https://www.hotjob.cn/wt/ghac/web/index?brandCode=1" target="_blank" rel="noopener noreferrer">查看官方招聘平台 ↗</a> <a href="https://www.honda.com.cn/news/20060919.html" target="_blank" rel="noopener noreferrer">查看工厂资料 ↗</a></article>
+        </div><small>公司资料核对日期：2026-10-30。请结合企业信用信息、劳动合同及岗位公告自行判断。</small></details>
         <div class="match-form">
           <label>搜索企业或行业<input id="jobSearch" type="search" placeholder="例如：珠江啤酒、水处理" value=""></label>
           <input id="candidateSkills" type="hidden">
@@ -284,7 +291,7 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
   {name:'联邦快递中国',industry:'logistics',city:'全国',year:1971,url:'https://www.fedex.com/zh-cn/home.html',badge:'国际物流'},
   {name:'UPS中国',industry:'logistics',city:'全国',year:1907,url:'https://www.ups.com/cn/zh/Home.page',badge:'国际物流'},
   {name:'广汽集团',industry:'consumer',city:'广州',year:1997,url:'https://www.gac.com.cn/',badge:'广州汽车产业'},
-  {name:'广汽本田',industry:'consumer',city:'广州',year:1998,url:'https://www.hotjob.cn/wt/ghac/web/index?brandCode=1',badge:'合资车企·招聘平台'},
+  {name:'广汽本田',industry:'consumer',city:'广州·增城（工厂）',year:1998,url:'https://www.hotjob.cn/wt/ghac/web/index?brandCode=1',badge:'合资车企·招聘平台'},
   {name:'广汽丰田',industry:'consumer',city:'广州·南沙',year:2004,url:'https://gac-toyota.zhiye.com/',badge:'官网招聘平台'},
   {name:'美的集团',industry:'consumer',city:'佛山·广东',year:1968,url:'https://www.midea.com/',badge:'家电与制造'},
   {name:'格力电器',industry:'consumer',city:'珠海·广东',year:1991,url:'https://www.gree.com/',badge:'家电与制造'},
@@ -371,6 +378,11 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
     if (event.key === 'Enter') { event.preventDefault(); event.stopImmediatePropagation(); renderDirectory(); }
   }, true);
   renderDirectory(false);
+  if (new URLSearchParams(window.location.search).get('local') === '1') {
+    if (typeof showView === 'function') showView('jobs');
+    const section = document.querySelector('#zengchengCompanies');
+    if (section) section.open = true;
+  }
 })();
 </script>
   <script src="company-directory.js"></script>

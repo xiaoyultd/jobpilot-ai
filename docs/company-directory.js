@@ -85,7 +85,7 @@ window.COMPANY_DIRECTORY = [
   {name:'联邦快递中国',industry:'logistics',city:'全国',year:1971,url:'https://www.fedex.com/zh-cn/home.html',badge:'国际物流'},
   {name:'UPS中国',industry:'logistics',city:'全国',year:1907,url:'https://www.ups.com/cn/zh/Home.page',badge:'国际物流'},
   {name:'广汽集团',industry:'consumer',city:'广州',year:1997,url:'https://www.gac.com.cn/',badge:'广州汽车产业'},
-  {name:'广汽本田',industry:'consumer',city:'广州',year:1998,url:'https://www.hotjob.cn/wt/ghac/web/index?brandCode=1',badge:'合资车企·招聘平台'},
+  {name:'广汽本田',industry:'consumer',city:'广州·增城（工厂）',year:1998,url:'https://www.hotjob.cn/wt/ghac/web/index?brandCode=1',badge:'合资车企·招聘平台'},
   {name:'广汽丰田',industry:'consumer',city:'广州·南沙',year:2004,url:'https://gac-toyota.zhiye.com/',badge:'官网招聘平台'},
   {name:'美的集团',industry:'consumer',city:'佛山·广东',year:1968,url:'https://www.midea.com/',badge:'家电与制造'},
   {name:'格力电器',industry:'consumer',city:'珠海·广东',year:1991,url:'https://www.gree.com/',badge:'家电与制造'},
@@ -172,4 +172,9 @@ window.COMPANY_DIRECTORY = [
     if (event.key === 'Enter') { event.preventDefault(); event.stopImmediatePropagation(); renderDirectory(); }
   }, true);
   renderDirectory(false);
+  if (new URLSearchParams(window.location.search).get('local') === '1') {
+    if (typeof showView === 'function') showView('jobs');
+    const section = document.querySelector('#zengchengCompanies');
+    if (section) section.open = true;
+  }
 })();
