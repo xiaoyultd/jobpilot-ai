@@ -125,7 +125,7 @@ window.COMPANY_DIRECTORY = [
     const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'consumer'];
     list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || a.year - b.year);
 
-    const keywords = `${role?.value || ''} ${skills?.value || ''}`.trim().toLocaleLowerCase();
+    const keywords = (role?.value || '').trim().toLocaleLowerCase();
     let keywordNote = '';
     if (keywords) {
       const tokens = keywords.split(/[,，、;；\s]+/).filter(Boolean);
@@ -133,8 +133,8 @@ window.COMPANY_DIRECTORY = [
         const haystack = `${company.name} ${sectorNames[company.industry]} ${company.badge} ${company.city}`.toLocaleLowerCase();
         return tokens.some(token => haystack.includes(token));
       });
-      if (hits.length) { list = hits; keywordNote = `关键词命中 ${hits.length} 家`; }
-      else keywordNote = '岗位 / 技能词没有对应到公司名称，已保留该行业企业供你查看招聘栏目';
+      list = hits;
+      keywordNote = hits.length ? `关键词命中 ${hits.length} 家` : '没有找到相关企业，可更换关键词或重置条件';
     }
 
     const cards = list.map((company, index) => `
@@ -147,14 +147,16 @@ window.COMPANY_DIRECTORY = [
       </article>`).join('');
     const total = directory.length;
     const title = chosenSector === 'all' ? `企业目录：${list.length} 家` : `${esc(sectorNames[chosenSector])}：${list.length} 家`;
-    const note = [keywordNote, `不限地区，收录 ${total} 家企业。沿革年份按公开资料整理，部分是品牌起始年份，不一定等于当前法人注册年。官网链接指向企业或官方招聘平台，不代表当前一定有空缺职位；请自行核对招聘公告和岗位待遇。公开渠道没有统一可核验的企业官网自然流量数字，本目录不虚构流量值。五行行业偏好仅作分类参考。`].filter(Boolean).join('。');
-    panel.innerHTML = `<div class="search-results-head"><div><span class="eyebrow">全国企业 · 水相关行业优先 · 按行业及品牌沿革整理</span><h3>${title}</h3><p>${esc(note)}</p></div></div><div class="search-result-grid">${cards}</div>`;
+    const note = [keywordNote, `共收录 ${total} 家企业。品牌沿革年份与法人注册时间可能不同，岗位和待遇以官网公告为准。`].filter(Boolean).join('。');
+    panel.innerHTML = `<div class="search-results-head"><div><span class="eyebrow">企业目录 · 按行业及品牌沿革整理</span><h3>${title}</h3><p>${esc(note)}</p></div></div>${cards ? `<div class="search-result-grid">${cards}</div>` : '<div class="empty-state"><b>没有找到匹配的企业</b><p>试试更短的企业名，或点击上方“重置条件”。</p></div>'}`;
     if (scroll) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   button.addEventListener('click', () => renderDirectory());
+  document.querySelector('#resetDirectoryBtn')?.addEventListener('click', () => { role.value = ''; sector.value = 'all'; renderDirectory(false); role.focus(); });
   sector?.addEventListener('change', () => renderDirectory(false));
   role?.addEventListener('keydown', event => {
     if (event.key === 'Enter') { event.preventDefault(); event.stopImmediatePropagation(); renderDirectory(); }
   }, true);
+  renderDirectory(false);
 })();

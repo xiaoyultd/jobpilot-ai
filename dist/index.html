@@ -76,17 +76,16 @@
       </section>
 
       <section class="view" id="jobs">
-        <div class="page-title"><p class="eyebrow">按行业找公司</p><h1>从自然搜索能找到的企业开始</h1><p>不限地区，整理100家官网可查、品牌有积淀的企业；水务环保、水处理、饮料食品、水产和港口物流优先。</p></div>
+        <div class="page-title"><p class="eyebrow">企业目录 · 100家</p><h1>找到值得了解的企业</h1><p>选行业或输入企业名称，查看公司官网和招聘入口。</p></div>
         <div class="match-form">
-          <label>想找什么岗位 / 行业<input id="jobSearch" placeholder="例如：水处理、行政、会计、运营、设备工程师" value=""></label>
-          <label>专业 / 技能 / 经验<input id="candidateSkills" placeholder="例如：环境工程、Excel、应届生、3年经验"></label>
+          <label>搜索企业或行业<input id="jobSearch" type="search" placeholder="例如：珠江啤酒、水处理" value=""></label>
+          <input id="candidateSkills" type="hidden">
           <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（100家，水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
-          <div class="match-actions"><button type="button" class="solid" id="searchDirectoryBtn">搜索企业目录</button></div>
-          <p class="match-hint">不限地区，按行业查看。名单参考企业官网、官方老字号/优质中小企业名单、品牌历史和公开行业资料；公开渠道没有统一可信的企业官网自然流量数字，因此不展示虚构流量分数。八字五行仅作为你的行业偏好，不作为求职判断依据。</p>
-          <p class="match-hint">名单筛选参考：<a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10677014.html" target="_blank" rel="noopener noreferrer">广州市商务局公布的广州老字号名单</a>、<a href="https://gxj.gz.gov.cn/yw/tzgg/content/post_9225219.html" target="_blank" rel="noopener noreferrer">广州市工信局公开的优质中小企业名单</a>。并非目录内每家公司都获得上述认定。</p>
+          <div class="match-actions"><button type="button" class="solid" id="searchDirectoryBtn">查看企业</button><button type="button" class="outline" id="resetDirectoryBtn">重置条件</button></div>
+          <p class="match-hint">这是企业目录。打开官网后，请在招聘栏目确认岗位是否开放。</p>
         </div>
         <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>选择行业后，点击“搜索企业目录”</b><p>会显示企业名称、行业、经营年份和真实官网入口；招聘以企业官网当前公告为准。</p></div></div>
-        <div class="ad-free-tip"><b>手机 Edge 去广告设置</b><p>Edge 菜单 ⋯ → 设置 → 隐私和安全 → 内容拦截器 → 开启“阻止广告”；如需屏蔽全部广告，再关闭“允许可接受的广告”。</p><small>本应用不展示广告。搜索服务页面的推广位由搜索服务控制，网页应用不能自行安装或启用浏览器扩展。</small></div>
+        <details class="directory-more"><summary>更多官方招聘入口和名单来源</summary><p><a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10677014.html">广州老字号名单</a> · <a href="https://gxj.gz.gov.cn/yw/tzgg/content/post_9225219.html">广州优质中小企业名单</a></p>
         <div class="page-title" style="margin-top:24px"><p class="eyebrow">官方求职入口</p><h2>增城及广州周边</h2></div>
         <div class="official-grid">
           <a class="official-card" href="https://xyzp.51job.com/gacgroup2027/jobs.html"><span class="tag green">增城新塘 · 校招</span><h3>广汽丰田</h3><p>广汽集团2027届校招页面含增城新塘岗位，适合2027届毕业生。</p><b>打开官方校招职位 →</b></a>
@@ -95,7 +94,7 @@
           <a class="official-card" href="https://app.mokahr.com/campus-recruitment/zensemi/142586#/"><span class="tag green">增城 · 2027届校招</span><h3>广州增芯科技</h3><p>半导体工艺、设备、制造、品质、IT等岗位，招聘对象以2027届毕业生为主。</p><b>打开招聘官网投递 →</b></a>
         </div>
         <div class="portal-links"><a href="https://ggfw.hrss.gd.gov.cn/recruitment/internet/main/#/home">广东公共求职招聘服务平台</a><a href="https://job.iguopin.com/app">国聘：国企招聘专区</a><a href="https://www.zc.gov.cn/zx/ztjj/rcfw/zpxx/index.html">增城区政府招聘公告</a></div>
-        <p class="result-count">页面展示已核验的职位快照，并根据岗位、地点、学历和偏好筛选；职位是否仍开放请以企业官网公告为准。</p>
+        </details>
       </section>
 
       <section class="view" id="wechat">
