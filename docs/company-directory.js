@@ -32,9 +32,9 @@ window.COMPANY_DIRECTORY = [
   {name:'广州酒家集团',industry:'beverage',city:'广州',year:1935,url:'https://www.gzr.com.cn/',badge:'广州老字号'},
   {name:'广州市亚洲牌食品科技',industry:'beverage',city:'广州',year:1946,url:'https://www.asia1946.com/',badge:'广州老字号·饮料'},
   {name:'广州珠江啤酒',industry:'beverage',city:'广州',year:1985,url:'https://www.zhujiangbeer.com/',badge:'广东老字号'},
-  {name:'广州风行乳业',industry:'beverage',city:'广州',year:1956,url:'https://www.fengxing.com.cn/',badge:'广州老字号·乳品'},
+  {name:'广州风行乳业',industry:'beverage',city:'广州',year:1956,url:'https://www.fengxingmilk.cn/',badge:'广州老字号·乳品'},
   {name:'广东燕塘乳业',industry:'beverage',city:'广州',year:1956,url:'https://www.yantangmilk.com/',badge:'广州老字号·乳品'},
-  {name:'广州王老吉药业',industry:'beverage',city:'广州',year:1828,url:'https://www.wanglaoji.com/',badge:'广州老字号'},
+  {name:'广州王老吉药业',industry:'beverage',city:'广州',year:1828,url:'https://www.wlj.com.cn/',badge:'广州老字号'},
   {name:'广州医药集团',industry:'beverage',city:'广州',year:1951,url:'https://www.gpc.com.cn/',badge:'广州老字号·医药'},
   {name:'健力宝集团',industry:'beverage',city:'广东',year:1984,url:'https://www.jianlibao.com.cn/',badge:'国民饮料品牌'},
   {name:'景田百岁山',industry:'beverage',city:'深圳·广东',year:1987,url:'https://www.ganten.com.cn/',badge:'饮用水品牌'},
@@ -97,8 +97,8 @@ window.COMPANY_DIRECTORY = [
   {name:'海康威视',industry:'consumer',city:'全国',year:2001,url:'https://www.hikvision.com/cn/',badge:'智能物联'},
   {name:'立白科技集团',industry:'consumer',city:'广州',year:1994,url:'https://www.liby.com.cn/',badge:'广州老字号品牌'},
   {name:'广州浪奇日用品',industry:'consumer',city:'广州',year:1959,url:'https://www.lonkey.com.cn/',badge:'广州老字号'},
-  {name:'广州虎头电池集团',industry:'consumer',city:'广州',year:1928,url:'https://www.chinahutou.com/',badge:'广州老字号·电池'},
-  {name:'珠江钢琴集团',industry:'consumer',city:'广州',year:1956,url:'https://www.pearlriverpiano.com/',badge:'广州老字号·制造'}
+  {name:'广州虎头电池集团',industry:'consumer',city:'广州',year:1928,url:'https://www.555bf.com.cn/',badge:'广州老字号·电池'},
+  {name:'珠江钢琴集团',industry:'consumer',city:'广州·增城',year:1956,url:'https://www.pearlriverpiano.com/',badge:'广州老字号·制造'}
 ];
 
 (() => {
@@ -175,6 +175,11 @@ window.COMPANY_DIRECTORY = [
   if (new URLSearchParams(window.location.search).get('local') === '1') {
     if (typeof showView === 'function') showView('jobs');
     const section = document.querySelector('#zengchengCompanies');
+    if (section) section.open = true;
+  }
+  if (new URLSearchParams(window.location.search).get('heritage') === '1') {
+    if (typeof showView === 'function') showView('jobs');
+    const section = document.querySelector('#heritageHiring');
     if (section) section.open = true;
   }
 })();
