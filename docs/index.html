@@ -80,14 +80,14 @@
         <div class="match-form">
           <label>想找什么岗位<input id="jobSearch" placeholder="例如：行政、人事、会计、客服、设备工程师" value=""></label>
           <label>专业 / 技能 / 经验<input id="candidateSkills" placeholder="例如：英语四级、Excel、应届生、3年经验"></label>
-          <label>期望地点<select id="cityFilter" aria-label="期望地点"><option>增城</option><option>广州</option><option>广州及周边</option><option>广东</option></select></label>
+          <label>期望地点<select id="cityFilter" aria-label="期望地点"><option>增城及广州</option><option>增城</option><option>广州</option><option>广州及周边</option><option>广东</option></select></label>
           <label>学历和身份<select id="candidateLevel"><option value="">不限</option><option>应届毕业生</option><option>大专</option><option>本科</option><option>硕士及以上</option></select></label>
           <label>工作时间偏好<select id="workPreference"><option value="">不限</option><option>双休 / 朝九晚五</option><option>稳定、加班少</option><option>可接受倒班</option></select></label>
           <label>待遇关注<input id="benefitsPreference" placeholder="例如：五险一金、年终奖、食宿"></label>
-          <div class="match-actions"><button type="button" class="solid" id="search500Btn">搜五百强官网</button><button type="button" class="outline" id="searchForeignBtn">搜优质外企</button><button type="button" class="outline" id="searchSoeBtn">搜国企 / 事业单位</button><button type="button" class="outline" id="showMoreSearches">查看更多官网搜索入口</button></div>
-          <p class="match-hint">手机点击前三个按钮会直接打开 Bing 搜索；返回本页可换类别。也可点“查看更多官网搜索入口”逐条选择。职位由搜索引擎实时展示，应用本身不抓取或上传简历。</p>
+          <div class="match-actions"><button type="button" class="solid" id="search500Btn">搜五百强官网职位</button><button type="button" class="outline" id="searchForeignBtn">搜优质外企职位</button><button type="button" class="outline" id="searchSoeBtn">搜国企 / 事业单位</button><button type="button" class="outline" id="searchGoodBtn">搜增城优质企业</button></div>
+          <p class="match-hint">点类别后，结果会整理在本页：显示企业、职位、地点、要求和企业招聘官网入口。当前为已核验的职位快照，不是实时全网抓取；班次和待遇以企业公告为准。</p>
         </div>
-        <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>填写条件后，选择上方单位类型开始匹配</b><p>会生成多条不同的职位搜索入口；点开后在 Bing 查看实时结果。</p></div></div>
+        <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>填写岗位和地点，选择企业类型</b><p>页面会按已核验的官方职位整理结果；点“查看官网岗位”可确认最新状态并投递。</p></div></div>
         <div class="ad-free-tip"><b>手机 Edge 去广告设置</b><p>Edge 菜单 ⋯ → 设置 → 隐私和安全 → 内容拦截器 → 开启“阻止广告”；如需屏蔽全部广告，再关闭“允许可接受的广告”。</p><small>本应用不展示广告。搜索服务页面的推广位由搜索服务控制，网页应用不能自行安装或启用浏览器扩展。</small></div>
         <div class="page-title" style="margin-top:24px"><p class="eyebrow">官方求职入口</p><h2>增城及广州周边</h2></div>
         <div class="official-grid">
@@ -97,7 +97,7 @@
           <a class="official-card" href="https://app.mokahr.com/campus-recruitment/zensemi/142586#/"><span class="tag green">增城 · 2027届校招</span><h3>广州增芯科技</h3><p>半导体工艺、设备、制造、品质、IT等岗位，招聘对象以2027届毕业生为主。</p><b>打开招聘官网投递 →</b></a>
         </div>
         <div class="portal-links"><a href="https://ggfw.hrss.gd.gov.cn/recruitment/internet/main/#/home">广东公共求职招聘服务平台</a><a href="https://job.iguopin.com/app">国聘：国企招聘专区</a><a href="https://www.zc.gov.cn/zx/ztjj/rcfw/zpxx/index.html">增城区政府招聘公告</a></div>
-        <p class="result-count">每条入口会按当前岗位、地点、学历、作息和待遇重新组合查询；职位是否在招请以企业官网公告为准。</p>
+        <p class="result-count">页面展示已核验的职位快照，并根据岗位、地点、学历和偏好筛选；职位是否仍开放请以企业官网公告为准。</p>
       </section>
 
       <section class="view" id="wechat">
