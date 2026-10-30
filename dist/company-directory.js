@@ -1,11 +1,11 @@
 window.COMPANY_DIRECTORY = [
   {name:'广州市水务投资集团',industry:'water',city:'广州',year:2008,url:'https://www.gzwaterinvest.com/',badge:'广州水务'},
-  {name:'广州水投建工集团',industry:'water',city:'广州',year:1961,url:'https://gzwsp.com/',badge:'官网有招聘公告'},
+  {name:'广州水投建工集团',industry:'water',city:'广州',year:1961,url:'https://www.gzswgc.cn/',badge:'企业官网'},
   {name:'广州市净水有限公司',industry:'water',city:'广州',year:1989,url:'https://www.gzsewage.com/index.php?lang=cn',badge:'国有水务'},
   {name:'广州市北控环保工程',industry:'water',city:'广州·增城',year:2016,url:'https://www.gzcsepe.com/recruiting/',badge:'本地环保水务·招聘页'},
   {name:'广州市三清环保科技',industry:'water',city:'广州',year:2003,url:'https://www.sqepi.com/Recruitment.aspx',badge:'水处理招聘页'},
   {name:'广东粤海水务',industry:'water',city:'广东',year:2000,url:'https://www.guangdongwater.com/',badge:'水务运营'},
-  {name:'中国光大环境',industry:'water',city:'全国',year:1993,url:'https://www.cebenvironment.com/opportunities.html',badge:'环保上市公司·社会招聘'},
+  {name:'中国光大环境',industry:'water',city:'全国',year:1993,url:'https://www.cebenvironment.com/',badge:'环保企业官网'},
   {name:'首创环保集团',industry:'water',city:'全国',year:1999,url:'https://www.capitalwater.cn/rlzy/index.html',badge:'环保水务·人才招聘'},
   {name:'北京碧水源科技',industry:'water',city:'全国',year:2001,url:'https://www.originwater.com/',badge:'水处理技术'},
   {name:'中国水务集团',industry:'water',city:'全国',year:2003,url:'https://www.chinawatergroup.com/',badge:'供水与环保'},
@@ -13,7 +13,7 @@ window.COMPANY_DIRECTORY = [
   {name:'瀚蓝环境',industry:'water',city:'佛山·广东',year:1992,url:'https://www.grandblue.cn/',badge:'环境服务'},
   {name:'中节能国祯环保',industry:'water',city:'全国',year:1997,url:'https://www.gzep.com.cn/',badge:'水环境治理'},
   {name:'广东环保集团',industry:'water',city:'广州·广东',year:2000,url:'https://www.gdguangye.com/',badge:'省属环保企业'},
-  {name:'深圳市水务集团',industry:'water',city:'深圳·广东',year:1981,url:'https://www.szwater.com.cn/',badge:'城市水务'},
+  {name:'深圳市水务集团',industry:'water',city:'深圳·广东',year:1981,url:'https://www.sz-water.com.cn/',badge:'城市水务'},
   {name:'杭州市水务集团',industry:'water',city:'杭州',year:1898,url:'https://www.hzsw.com.cn/',badge:'百年水务'},
   {name:'重庆水务集团',industry:'water',city:'重庆',year:2001,url:'https://www.cncqsw.com/',badge:'城市水务'},
   {name:'中国联塑集团',industry:'water',city:'佛山·广东',year:1986,url:'https://www.lesso.com/',badge:'管道与建材'},
@@ -26,8 +26,8 @@ window.COMPANY_DIRECTORY = [
   {name:'威乐中国',industry:'equipment',city:'全国',year:1872,url:'https://wilo.com/cn/zh_cn/',badge:'水泵与系统'},
   {name:'苏伊士中国',industry:'equipment',city:'全国',year:1858,url:'https://www.suez.com/zh-cn',badge:'水务与资源管理'},
   {name:'威立雅中国',industry:'equipment',city:'全国',year:1853,url:'https://www.veolia.cn/',badge:'水务与环境服务'},
-  {name:'栗田工业中国',industry:'equipment',city:'全国',year:1949,url:'https://www.kurita-water.com.cn/',badge:'工业水处理'},
-  {name:'荏原中国',industry:'equipment',city:'全国',year:1912,url:'https://www.ebara.com.cn/',badge:'泵与环境设备'},
+  {name:'栗田工业中国',industry:'equipment',city:'全国',year:1949,url:'https://www.kurita.cn/',badge:'工业水处理'},
+  {name:'荏原中国',industry:'equipment',city:'全国',year:1912,url:'https://www.ebara.cn/',badge:'泵与环境设备'},
   {name:'广州酒家集团',industry:'beverage',city:'广州',year:1935,url:'https://www.gzr.com.cn/',badge:'广州老字号'},
   {name:'广州市亚洲牌食品科技',industry:'beverage',city:'广州',year:1946,url:'https://www.asia1946.com/',badge:'广州老字号·饮料'},
   {name:'广州珠江啤酒',industry:'beverage',city:'广州',year:1985,url:'https://www.zhujiangbeer.com/',badge:'广东老字号'},
@@ -42,7 +42,7 @@ window.COMPANY_DIRECTORY = [
   {name:'杭州娃哈哈集团',industry:'beverage',city:'全国',year:1987,url:'https://www.wahaha.com.cn/',badge:'长期经营品牌'},
   {name:'东鹏饮料',industry:'beverage',city:'深圳·广东',year:1987,url:'https://www.dongpeng.com/',badge:'广东饮料品牌'},
   {name:'青岛啤酒',industry:'beverage',city:'全国',year:1903,url:'https://www.tsingtao.com.cn/',badge:'百年品牌'},
-  {name:'可口可乐中国',industry:'beverage',city:'全国',year:1886,url:'https://www.coca-cola.com.cn/',badge:'饮料品牌'},
+  {name:'可口可乐中国',industry:'beverage',city:'全国',year:1886,url:'https://www.coca-cola.com/cn/zh',badge:'饮料品牌'},
   {name:'百事中国',industry:'beverage',city:'全国',year:1898,url:'https://www.pepsico.com.cn/',badge:'饮料与食品'},
   {name:'雀巢中国',industry:'beverage',city:'全国',year:1866,url:'https://www.nestle.com.cn/',badge:'食品饮料'},
   {name:'达能中国',industry:'beverage',city:'全国',year:1919,url:'https://www.danone.com.cn/',badge:'饮料与营养'},
@@ -150,6 +150,33 @@ window.COMPANY_DIRECTORY = [
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[ch]);
+  // A failed automated request can also reflect a site blocking bots. Do not label it as closed.
+  const linkChecks = {
+    '广州市三清环保科技':'不可用','广东凌霄泵业':'不可用','三全食品':'不可用','北京碧水源科技':'不可用',
+    '建发轻工':'不可用','绿源环保工程设备（广州）有限公司':'不可用','招商局港口':'不可用','新希望集团':'不可用',
+    '广州魔瓦网络科技有限公司':'不可用','广州赛意信息科技股份有限公司':'不可用','广东环保集团':'不可用',
+    '杭州市水务集团':'不可用','威乐中国':'不可用','健力宝集团':'不可用','景田百岁山':'不可用',
+    '广州市水务投资集团':'受限','海大集团':'受限','百事中国':'受限','中国水产有限公司':'受限',
+    '中国外运':'受限','广汽本田':'受限','广州虎头电池集团':'受限','海尔集团':'受限','中国五矿集团':'受限',
+    '广州银行':'受限','唯品会':'受限','马士基中国':'受限','雀巢中国':'受限'
+  };
+  const isFresh = date => {
+    const age = Date.now() - Date.parse(`${date}T00:00:00+08:00`);
+    return Number.isFinite(age) && age >= 0 && age < 7 * 86400000;
+  };
+  const officialJobSnapshots = [
+    {company:'广汽丰田',title:'新媒体运营',city:'广州·南沙',requirements:'官网列出1人；新媒体与文字表达，熟悉 Excel、PPT 等。',salary:'官网未公开',published:'2026-10-15',checked:'2026-10-30',url:'https://gac-toyota.zhiye.com/zpdetail/621155669',list:'https://gac-toyota.zhiye.com/search?d=-1'},
+    {company:'广汽丰田',title:'数据执行专员',city:'广州·南沙',requirements:'本科及以上、1–3年相关经验；接受频繁出差或驻点。',salary:'官网未公开',published:'2026-10-28',checked:'2026-10-30',url:'https://gac-toyota.zhiye.com/zpdetail/621162278',list:'https://gac-toyota.zhiye.com/search?d=-1'},
+    {company:'广州宏天软件',title:'技术支持',city:'广州',requirements:'官网标注长期招聘，技术支持相关要求详见原文。',salary:'官网未公开',published:'官网未注明',checked:'2026-10-30',url:'https://www.hotent.com/Jobs/',list:'https://www.hotent.com/Jobs/'}
+  ];
+  function renderOfficialJobs() {
+    const box = document.querySelector('#latestHiringBody');
+    if (!box) return;
+    box.innerHTML = `<p>这里是人工核对的官网记录，并非实时抓取。岗位可能随时关闭；本次没有核实到增城本地的具体开放岗位。请以官网页面为准。</p><div class="local-company-grid">${officialJobSnapshots.map(job => {
+      const fresh = isFresh(job.checked);
+      return `<article><b>${esc(job.title)} · ${esc(job.company)}</b><span>${esc(job.city)} · 薪资：${esc(job.salary)}</span><p>${esc(job.requirements)}</p><small>${fresh ? '核对时官网展示该职位' : '超过7天未复核，岗位状态待确认'} · 发布时间：${esc(job.published)} · 核对：${esc(job.checked)}</small><a href="${esc(fresh ? job.url : job.list)}" target="_blank" rel="noopener noreferrer">${fresh ? '查看官网职位并确认' : '打开官网搜索最新职位'} ↗</a></article>`;
+    }).join('')}</div>`;
+  }
 
   function renderDirectory(scroll = true) {
     const chosenSector = sector?.value || 'all';
@@ -177,24 +204,29 @@ window.COMPANY_DIRECTORY = [
       keywordNote = hits.length ? `关键词命中 ${hits.length} 家` : '没有找到相关企业，可更换关键词或重置条件';
     }
 
-    const cards = list.map((company, index) => `
+    const cards = list.map((company, index) => {
+      const linkStatus = linkChecks[company.name];
+      const linkNote = linkStatus === '不可用' ? '官网连接检查失败，入口暂不提供；需重新核实' : linkStatus === '受限' ? '连接检查受限，手机访问可能不同' : '2026-10-30 连接检查通过，手机访问可能不同';
+      const jobNote = company.position && company.checked && isFresh(company.checked) ? company.position : company.position ? `上次核对 ${company.checked || '日期未知'}，职位状态待重新确认` : '暂未核实，请查看官网招聘信息';
+      return `
       <article class="search-result-card directory-card">
         <span>${String(index + 1).padStart(2, '0')} · ${esc(sectorNames[company.industry])}</span>
         <b>${esc(company.name)}</b>
         <small>${esc(company.city)} · 品牌 / 业务沿革始于 ${esc(company.year)} 年</small>
         <small>${esc(company.badge)} · 官网核对后再查看招聘公告</small>
-        <small>职位：${esc(company.position || '暂未核实，请查看官网招聘信息')}</small>
+        <small>职位：${esc(jobNote)}</small>
         <small>薪资：${esc(company.salary || '待官网确认')}</small>
-        ${company.checked ? `<small>招聘信息核对：${esc(company.checked)}，请确认是否仍开放</small>` : ''}
-        <a href="${esc(company.url)}" target="_blank" rel="noopener noreferrer">打开企业官网 / 招聘栏目 ↗</a>
-      </article>`).join('');
+        <small>${esc(linkNote)}</small>
+        ${linkStatus === '不可用' ? '<small>请等待官网入口复核</small>' : `<a href="${esc(company.url)}" target="_blank" rel="noopener noreferrer">${linkStatus === '受限' ? '尝试打开企业链接（可能受限）' : /招聘|校招/.test(company.badge) ? '打开官方招聘入口' : '打开公司官网'} ↗</a>`}
+      </article>`;
+    }).join('');
     const total = directory.length;
     const categoryTotal = directory.filter(company => company.industry === chosenSector).length;
     const title = chosenSector === 'all' ? `企业目录：${list.length} 家` : `${esc(sectorNames[chosenSector])}：筛选到 ${list.length} 家（本行业收录 ${categoryTotal} / 100 家）`;
     const regionLabel = region?.selectedOptions?.[0]?.textContent || '全部地区';
     const note = [`地区：${regionLabel}`, keywordNote, `共收录 ${total} 家企业。地区为目录中标注的企业所在地，具体岗位地点和待遇以官网公告为准。品牌沿革年份与法人注册时间可能不同。`].filter(Boolean).join('。');
     const showSalary = ['all','water','equipment'].includes(chosenSector) && ['all','zengcheng','guangzhou','guangdong'].includes(chosenRegion);
-    const salary = showSalary ? `<section class="salary-reference"><h3>职位与薪资参考 <small>增城招聘样本</small></h3><p>以下为招聘平台公开样本，核对日期 2026-10-30；不代表下方企业的薪资，也不保证仍在招聘。</p><div class="salary-grid"><a href="https://www.zhaopin.com/jobdetail/CC514434030J41021598002.htm" target="_blank" rel="noopener noreferrer"><b>环保水处理技术员</b><strong>7,000–10,000 元/月</strong><small>工大环境 · 增城 · 大专 · 1–3年</small><span>查看招聘原文 ↗</span></a><a href="https://www.zhaopin.com/sou/jl763/kwDGQ5I13K0PEUAUGBBO40" target="_blank" rel="noopener noreferrer"><b>废水处理值班技师</b><strong>6,000–8,000 元/月</strong><small>湖南航天凯天水务 · 增城 · 3–5年 · 倒班</small><span>查看招聘来源 ↗</span></a><a href="https://m.zhaopin.com/zhaopin/9ccbd1bee88e4a2e8089024bd9b5ff6b/" target="_blank" rel="noopener noreferrer"><b>环境检测员</b><strong>4,000–7,000 元/月</strong><small>公用环境检测（广州）· 增城 · 1–3年</small><span>查看招聘来源 ↗</span></a></div></section>` : '';
+    const salary = showSalary ? `<section class="salary-reference"><h3>职位与薪资参考</h3><p>原有增城招聘平台薪资样本无法确认仍在招聘，已不作为当前岗位展示。目前暂无核实有效且公开薪资的增城官网岗位；有准确金额时再补充。</p></section>` : '';
     panel.innerHTML = `<div class="search-results-head"><div><span class="eyebrow">企业目录 · 按行业及品牌沿革整理</span><h3>${title}</h3><p>${esc(note)}</p></div></div>${salary}${cards ? `<div class="search-result-grid">${cards}</div>` : '<div class="empty-state"><b>没有找到匹配的企业</b><p>试试更短的企业名，或点击上方“重置条件”。</p></div>'}`;
     if (scroll) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -206,6 +238,7 @@ window.COMPANY_DIRECTORY = [
   role?.addEventListener('keydown', event => {
     if (event.key === 'Enter') { event.preventDefault(); event.stopImmediatePropagation(); renderDirectory(); }
   }, true);
+  renderOfficialJobs();
   renderDirectory(false);
   if (new URLSearchParams(window.location.search).get('local') === '1') {
     if (typeof showView === 'function') showView('jobs');
@@ -215,6 +248,11 @@ window.COMPANY_DIRECTORY = [
   if (new URLSearchParams(window.location.search).get('heritage') === '1') {
     if (typeof showView === 'function') showView('jobs');
     const section = document.querySelector('#heritageHiring');
+    if (section) section.open = true;
+  }
+  if (new URLSearchParams(window.location.search).get('jobs') === '1') {
+    if (typeof showView === 'function') showView('jobs');
+    const section = document.querySelector('#latestHiring');
     if (section) section.open = true;
   }
 })();
