@@ -35,7 +35,7 @@
         <div class="quick-grid">
           <button class="quick-card primary" data-action="adapt"><span class="card-icon">↗</span><small>最快提升面试率</small><h2>一键适配简历</h2><p>粘贴职位描述，30 秒生成更匹配的简历版本</p><b>开始适配 →</b></button>
           <button class="quick-card" data-action="analyze"><span class="card-icon purple">◎</span><small>发现隐藏问题</small><h2>深度分析简历</h2><p>从内容、结构、关键词等 6 个维度给出建议</p><b>立即分析 →</b></button>
-          <button class="quick-card" data-view-target="jobs"><span class="card-icon yellow">⌕</span><small>企业官网优先</small><h2>按条件搜索职位</h2><p>按岗位和作息偏好查五百强、外企、国企及事业单位</p><b>去找机会 →</b></button>
+          <button class="quick-card" data-view-target="jobs"><span class="card-icon yellow">⌕</span><small>企业官网优先</small><h2>按条件搜索职位</h2><p>按岗位和作息偏好查20年以上企业、外企、国企及事业单位</p><b>去找机会 →</b></button>
         </div>
         <div class="section-head"><div><p class="eyebrow">功能演示</p><h2>示例职位（非实时招聘信息）</h2></div><button class="text-btn" data-view-target="jobs">按条件搜索官网岗位 →</button></div>
         <div class="match-layout">
@@ -76,7 +76,7 @@
       </section>
 
       <section class="view" id="jobs">
-        <div class="page-title"><p class="eyebrow">先匹配职位，再找企业</p><h1>根据求职条件，搜索好单位的官网招聘</h1><p>填写目标岗位和条件，再分别搜索五百强、外企、国企或事业单位的官方招聘信息。</p></div>
+        <div class="page-title"><p class="eyebrow">先匹配职位，再找企业</p><h1>根据求职条件，搜索好单位的官网招聘</h1><p>填写目标岗位和条件，再分别查找成立满20年的企业、外企、国企或事业单位招聘。</p></div>
         <div class="match-form">
           <label>想找什么岗位<input id="jobSearch" placeholder="例如：行政、人事、会计、客服、设备工程师" value=""></label>
           <label>专业 / 技能 / 经验<input id="candidateSkills" placeholder="例如：英语四级、Excel、应届生、3年经验"></label>
@@ -84,7 +84,7 @@
           <label>学历和身份<select id="candidateLevel"><option value="">不限</option><option>应届毕业生</option><option>大专</option><option>本科</option><option>硕士及以上</option></select></label>
           <label>工作时间偏好<select id="workPreference"><option value="">不限</option><option>双休 / 朝九晚五</option><option>稳定、加班少</option><option>可接受倒班</option></select></label>
           <label>待遇关注<input id="benefitsPreference" placeholder="例如：五险一金、年终奖、食宿"></label>
-          <div class="match-actions"><button type="button" class="solid" id="search500Btn">搜五百强官网职位</button><button type="button" class="outline" id="searchForeignBtn">搜优质外企职位</button><button type="button" class="outline" id="searchSoeBtn">搜国企 / 事业单位</button><button type="button" class="outline" id="searchGoodBtn">搜增城优质企业</button></div>
+          <div class="match-actions"><button type="button" class="solid" id="search500Btn">搜成立20年以上企业</button><button type="button" class="outline" id="searchForeignBtn">搜优质外企职位</button><button type="button" class="outline" id="searchSoeBtn">搜国企 / 事业单位</button><button type="button" class="outline" id="searchGoodBtn">搜增城优质企业</button></div>
           <p class="match-hint">点类别后，结果会整理在本页：显示企业、职位、地点、要求和企业招聘官网入口。当前为已核验的职位快照，不是实时全网抓取；班次和待遇以企业公告为准。</p>
         </div>
         <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>填写岗位和地点，选择企业类型</b><p>页面会按已核验的官方职位整理结果；点“查看官网岗位”可确认最新状态并投递。</p></div></div>
