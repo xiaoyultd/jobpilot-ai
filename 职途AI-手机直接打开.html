@@ -59,7 +59,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
         <div class="quick-grid">
           <button class="quick-card primary" data-action="adapt"><span class="card-icon">↗</span><small>最快提升面试率</small><h2>一键适配简历</h2><p>粘贴职位描述，30 秒生成更匹配的简历版本</p><b>开始适配 →</b></button>
           <button class="quick-card" data-action="analyze"><span class="card-icon purple">◎</span><small>发现隐藏问题</small><h2>深度分析简历</h2><p>从内容、结构、关键词等 6 个维度给出建议</p><b>立即分析 →</b></button>
-          <button class="quick-card" data-view-target="jobs"><span class="card-icon yellow">⌕</span><small>企业官网优先</small><h2>按行业找企业</h2><p>查看100家官网可查的企业，水相关行业优先</p><b>去找机会 →</b></button>
+          <button class="quick-card" data-view-target="jobs"><span class="card-icon yellow">⌕</span><small>企业官网优先</small><h2>按行业找企业</h2><p>按行业浏览企业官网和招聘入口</p><b>去找机会 →</b></button>
         </div>
         <div class="section-head"><div><p class="eyebrow">功能演示</p><h2>示例职位（非实时招聘信息）</h2></div><button class="text-btn" data-view-target="jobs">按条件搜索官网岗位 →</button></div>
         <div class="match-layout">
@@ -100,7 +100,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
       </section>
 
       <section class="view" id="jobs">
-        <div class="page-title"><p class="eyebrow">企业目录 · 100家</p><h1>找到值得了解的企业</h1><p>选行业或输入企业名称，查看公司官网和招聘入口。</p></div>
+        <div class="page-title"><p class="eyebrow">企业目录</p><h1>找到值得了解的企业</h1><p>选行业或输入企业名称，查看公司官网和招聘入口。</p></div>
         <details class="local-companies" id="heritageHiring"><summary><span>老字号招聘查询 · 11家</span><small>点击展开，逐家查看官网查询结果</small></summary><p>查询范围为本目录中标记为老字号的11家，核对日期：2026-10-30。本次没有从可读取的官网页面确认仍开放的具体岗位；下列“未核实”不等于企业没有招聘。页面不会自动更新。</p><div class="local-company-grid">
           <article><b>立白科技集团</b><span>2027届校招线索 · 岗位状态需官网确认</span><p>高校发布2027届校招信息，官网招聘系统的岗位内容未能直接读取；薪资和工作地点以具体职位为准。</p><a href="https://zhaopin.liby.com.cn/campus" target="_blank" rel="noopener noreferrer">打开官方校招入口 ↗</a><a href="https://scdc.jnu.edu.cn/teachin/view/id/193275" target="_blank" rel="noopener noreferrer">查看高校公告 ↗</a></article>
           <article><b>广州酒家集团</b><span>官网有招聘栏目 · 未核实在招</span><p>总部页面所见公告为2025年拟录用公示和已过期岗位；其他下属公司请在官网分别查看。</p><a href="https://www.gzr.com.cn/join/" target="_blank" rel="noopener noreferrer">打开官方招聘栏目 ↗</a></article>
@@ -123,7 +123,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
         <div class="match-form">
           <label>搜索企业或行业<input id="jobSearch" type="search" placeholder="例如：珠江啤酒、水处理" value=""></label>
           <input id="candidateSkills" type="hidden">
-          <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（100家，水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
+          <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="internet">互联网 / 科技</option><option value="trade">贸易 / 供应链</option><option value="finance">金融 / 银行 / 证券</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
           <label>地区<select id="directoryRegion" aria-label="地区"><option value="all">全部地区</option><option value="zengcheng">增城</option><option value="guangzhou">广州（含增城）</option><option value="guangdong">广东（含广州）</option><option value="other">其他已标明地区</option><option value="national">全国（地点未细分）</option></select></label>
           <div class="match-actions"><button type="button" class="solid" id="searchDirectoryBtn">查看企业</button><button type="button" class="outline" id="resetDirectoryBtn">重置条件</button></div>
           <p class="match-hint">地区按目录中标注的企业所在地筛选，具体岗位地点请在官网招聘栏目确认。</p>
@@ -317,7 +317,22 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
   {name:'立白科技集团',industry:'consumer',city:'广州',year:1994,url:'https://www.liby.com.cn/',badge:'广州老字号品牌'},
   {name:'广州浪奇日用品',industry:'consumer',city:'广州',year:1959,url:'https://www.lonkey.com.cn/',badge:'广州老字号'},
   {name:'广州虎头电池集团',industry:'consumer',city:'广州',year:1928,url:'https://www.555bf.com.cn/',badge:'广州老字号·电池'},
-  {name:'珠江钢琴集团',industry:'consumer',city:'广州·增城',year:1956,url:'https://www.pearlriverpiano.com/',badge:'广州老字号·制造'}
+  {name:'珠江钢琴集团',industry:'consumer',city:'广州·增城',year:1956,url:'https://www.pearlriverpiano.com/',badge:'广州老字号·制造'},
+  {name:'腾讯',industry:'internet',city:'深圳·广东',year:1998,url:'https://careers.tencent.com/jobopportunity.html',badge:'互联网·官方招聘'},
+  {name:'网易',industry:'internet',city:'广州·广东',year:1997,url:'https://hr.163.com/',badge:'互联网·官方招聘'},
+  {name:'唯品会',industry:'internet',city:'广州·广东',year:2008,url:'https://campus.vip.com/',badge:'电商·官方校招入口'},
+  {name:'百度',industry:'internet',city:'全国',year:2000,url:'https://talent.baidu.com/jobs/',badge:'互联网·官方校招入口'},
+  {name:'携程集团',industry:'internet',city:'全国',year:1999,url:'https://careers.trip.com/',badge:'互联网旅游·官方招聘'},
+  {name:'厦门建发股份',industry:'trade',city:'厦门',year:1980,url:'https://www.chinacnd.com/recruitment-1.html',badge:'供应链贸易·官方招聘'},
+  {name:'厦门国贸控股集团',industry:'trade',city:'厦门',year:1980,url:'https://itg.zhiye.com/gmgfgg?key=gmgf',badge:'贸易供应链·官方招聘'},
+  {name:'建发轻工',industry:'trade',city:'厦门',year:1980,url:'https://cndfootwear.com/career',badge:'外贸供应链·官方招聘'},
+  {name:'利丰集团',industry:'trade',city:'全国',year:1906,url:'https://www.lifung.com/careers/',badge:'贸易供应链·官方招聘'},
+  {name:'中国五矿集团',industry:'trade',city:'全国',year:1950,url:'https://www.minmetals.com.cn/',badge:'贸易及资源·集团官网'},
+  {name:'广州银行',industry:'finance',city:'广州',year:1996,url:'https://gzcb.hotjob.cn/',badge:'银行·官方招聘'},
+  {name:'广州农村商业银行',industry:'finance',city:'广州',year:2009,url:'https://www.grcbank.com/',badge:'银行·官网人才招聘'},
+  {name:'招商银行',industry:'finance',city:'深圳·广东',year:1987,url:'https://career.cmbchina.com/',badge:'银行·官方招聘'},
+  {name:'广发银行',industry:'finance',city:'广州·广东',year:1988,url:'https://www.cgbchina.com.cn/',badge:'银行·官网人才招聘'},
+  {name:'广发证券',industry:'finance',city:'广州·广东',year:1991,url:'https://job.gf.com.cn/index',badge:'证券·官方招聘'}
 ];
 
 (() => {
@@ -333,7 +348,8 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
   const sectorNames = {
     water: '水务环保 / 水处理', equipment: '水处理设备 / 制造',
     beverage: '饮料 / 食品 / 乳品', aquatic: '水产 / 养殖 / 海洋食品',
-    logistics: '港口 / 航运 / 物流', consumer: '成熟消费 / 医药 / 家电'
+    logistics: '港口 / 航运 / 物流', consumer: '成熟消费 / 医药 / 家电',
+    internet: '互联网 / 科技', trade: '贸易 / 供应链', finance: '金融 / 银行 / 证券'
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -350,7 +366,7 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
       (chosenRegion === 'guangdong' && inGuangdong(company.city)) ||
       (chosenRegion === 'other' && company.city !== '全国' && !inGuangdong(company.city)) ||
       (chosenRegion === 'national' && company.city === '全国'));
-    const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'consumer'];
+    const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'internet', 'trade', 'finance', 'consumer'];
     list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || a.year - b.year);
 
     const keywords = (role?.value || '').trim().toLocaleLowerCase();

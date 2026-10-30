@@ -98,7 +98,22 @@ window.COMPANY_DIRECTORY = [
   {name:'立白科技集团',industry:'consumer',city:'广州',year:1994,url:'https://www.liby.com.cn/',badge:'广州老字号品牌'},
   {name:'广州浪奇日用品',industry:'consumer',city:'广州',year:1959,url:'https://www.lonkey.com.cn/',badge:'广州老字号'},
   {name:'广州虎头电池集团',industry:'consumer',city:'广州',year:1928,url:'https://www.555bf.com.cn/',badge:'广州老字号·电池'},
-  {name:'珠江钢琴集团',industry:'consumer',city:'广州·增城',year:1956,url:'https://www.pearlriverpiano.com/',badge:'广州老字号·制造'}
+  {name:'珠江钢琴集团',industry:'consumer',city:'广州·增城',year:1956,url:'https://www.pearlriverpiano.com/',badge:'广州老字号·制造'},
+  {name:'腾讯',industry:'internet',city:'深圳·广东',year:1998,url:'https://careers.tencent.com/jobopportunity.html',badge:'互联网·官方招聘'},
+  {name:'网易',industry:'internet',city:'广州·广东',year:1997,url:'https://hr.163.com/',badge:'互联网·官方招聘'},
+  {name:'唯品会',industry:'internet',city:'广州·广东',year:2008,url:'https://campus.vip.com/',badge:'电商·官方校招入口'},
+  {name:'百度',industry:'internet',city:'全国',year:2000,url:'https://talent.baidu.com/jobs/',badge:'互联网·官方校招入口'},
+  {name:'携程集团',industry:'internet',city:'全国',year:1999,url:'https://careers.trip.com/',badge:'互联网旅游·官方招聘'},
+  {name:'厦门建发股份',industry:'trade',city:'厦门',year:1980,url:'https://www.chinacnd.com/recruitment-1.html',badge:'供应链贸易·官方招聘'},
+  {name:'厦门国贸控股集团',industry:'trade',city:'厦门',year:1980,url:'https://itg.zhiye.com/gmgfgg?key=gmgf',badge:'贸易供应链·官方招聘'},
+  {name:'建发轻工',industry:'trade',city:'厦门',year:1980,url:'https://cndfootwear.com/career',badge:'外贸供应链·官方招聘'},
+  {name:'利丰集团',industry:'trade',city:'全国',year:1906,url:'https://www.lifung.com/careers/',badge:'贸易供应链·官方招聘'},
+  {name:'中国五矿集团',industry:'trade',city:'全国',year:1950,url:'https://www.minmetals.com.cn/',badge:'贸易及资源·集团官网'},
+  {name:'广州银行',industry:'finance',city:'广州',year:1996,url:'https://gzcb.hotjob.cn/',badge:'银行·官方招聘'},
+  {name:'广州农村商业银行',industry:'finance',city:'广州',year:2009,url:'https://www.grcbank.com/',badge:'银行·官网人才招聘'},
+  {name:'招商银行',industry:'finance',city:'深圳·广东',year:1987,url:'https://career.cmbchina.com/',badge:'银行·官方招聘'},
+  {name:'广发银行',industry:'finance',city:'广州·广东',year:1988,url:'https://www.cgbchina.com.cn/',badge:'银行·官网人才招聘'},
+  {name:'广发证券',industry:'finance',city:'广州·广东',year:1991,url:'https://job.gf.com.cn/index',badge:'证券·官方招聘'}
 ];
 
 (() => {
@@ -114,7 +129,8 @@ window.COMPANY_DIRECTORY = [
   const sectorNames = {
     water: '水务环保 / 水处理', equipment: '水处理设备 / 制造',
     beverage: '饮料 / 食品 / 乳品', aquatic: '水产 / 养殖 / 海洋食品',
-    logistics: '港口 / 航运 / 物流', consumer: '成熟消费 / 医药 / 家电'
+    logistics: '港口 / 航运 / 物流', consumer: '成熟消费 / 医药 / 家电',
+    internet: '互联网 / 科技', trade: '贸易 / 供应链', finance: '金融 / 银行 / 证券'
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -131,7 +147,7 @@ window.COMPANY_DIRECTORY = [
       (chosenRegion === 'guangdong' && inGuangdong(company.city)) ||
       (chosenRegion === 'other' && company.city !== '全国' && !inGuangdong(company.city)) ||
       (chosenRegion === 'national' && company.city === '全国'));
-    const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'consumer'];
+    const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'internet', 'trade', 'finance', 'consumer'];
     list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || a.year - b.year);
 
     const keywords = (role?.value || '').trim().toLocaleLowerCase();
