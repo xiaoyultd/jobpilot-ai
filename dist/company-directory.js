@@ -2,7 +2,6 @@ window.COMPANY_DIRECTORY = [
   {name:'广州市水务投资集团',industry:'water',city:'广州',year:2008,url:'https://www.gzwaterinvest.com/',badge:'广州水务'},
   {name:'广州水投建工集团',industry:'water',city:'广州',year:1961,url:'https://gzwsp.com/',badge:'官网有招聘公告'},
   {name:'广州市净水有限公司',industry:'water',city:'广州',year:1989,url:'https://www.gzsewage.com/index.php?lang=cn',badge:'国有水务'},
-  {name:'广州水务工程建设集团',industry:'water',city:'广州',year:1975,url:'https://www.gzswgc.cn/',badge:'水务工程'},
   {name:'广州市北控环保工程',industry:'water',city:'广州·增城',year:2016,url:'https://www.gzcsepe.com/recruiting/',badge:'本地环保水务·招聘页'},
   {name:'广州市三清环保科技',industry:'water',city:'广州',year:2003,url:'https://www.sqepi.com/Recruitment.aspx',badge:'水处理招聘页'},
   {name:'广东粤海水务',industry:'water',city:'广东',year:2000,url:'https://www.guangdongwater.com/',badge:'水务运营'},
@@ -113,7 +112,23 @@ window.COMPANY_DIRECTORY = [
   {name:'广州农村商业银行',industry:'finance',city:'广州',year:2009,url:'https://www.grcbank.com/',badge:'银行·官网人才招聘'},
   {name:'招商银行',industry:'finance',city:'深圳·广东',year:1987,url:'https://career.cmbchina.com/',badge:'银行·官方招聘'},
   {name:'广发银行',industry:'finance',city:'广州·广东',year:1988,url:'https://www.cgbchina.com.cn/',badge:'银行·官网人才招聘'},
-  {name:'广发证券',industry:'finance',city:'广州·广东',year:1991,url:'https://job.gf.com.cn/index',badge:'证券·官方招聘'}
+  {name:'广发证券',industry:'finance',city:'广州·广东',year:1991,url:'https://job.gf.com.cn/index',badge:'证券·官方招聘'},
+  {name:'广州中科环保技术有限公司',industry:'water',city:'广州·广东',year:2010,url:'https://zkepco.com/',badge:'水环境治理·省级专精特新',featured:true},
+  {name:'绿源环保工程设备（广州）有限公司',industry:'water',city:'广州·广东',year:2015,url:'https://www.gs-eee.com/',badge:'污水与废气治理',featured:true},
+  {name:'广州昌硕环保设备有限公司',industry:'water',city:'广州·广东',year:2006,url:'https://www.csepvip.com/',badge:'水处理设备',featured:true},
+  {name:'广州益方田园环保股份有限公司',industry:'water',city:'广州·广东',year:2001,url:'https://www.tyepi.com/gsjs',badge:'废水治理·省级专精特新',featured:true},
+  {name:'广州新普利节能环保科技有限公司',industry:'water',city:'广州·广东',year:1998,url:'https://www.sinpurely.com/',badge:'水处理与资源回用',featured:true},
+  {name:'广州振清环保技术有限公司',industry:'water',city:'广州·广东',year:2007,url:'https://www.cngzet.com/article.php?AId=5',badge:'水处理工程',featured:true},
+  {name:'广州海艺软件有限公司',industry:'internet',city:'广州·广东',year:2008,url:'https://www.haiyisoft.com.cn/index.php?catid=6',badge:'软件服务',featured:true},
+  {name:'广州市信晨软件科技有限公司',industry:'internet',city:'广州·广东',year:2008,url:'https://www.thincent.com/aboutus.html',badge:'企业数字化服务',featured:true},
+  {name:'广州魔瓦网络科技有限公司',industry:'internet',city:'广州·广东',year:2008,url:'https://www.mymova.com/companypro.aspx',badge:'会议活动软件',featured:true},
+  {name:'广州赛意信息科技股份有限公司',industry:'internet',city:'广州·广东',year:2005,url:'https://www.jing-tong.com/know_sie/',badge:'工业软件',featured:true},
+  {name:'广州宏天软件股份有限公司',industry:'internet',city:'广州·广东',year:2008,url:'https://www.hotent.com/Jobs/',badge:'企业软件·官网招聘',featured:true,position:'技术支持（广州，官网标注长期招聘）',salary:'官网未公开；详情请核对招聘页',checked:'2026-10-30'},
+  {name:'广州市景心科技股份有限公司',industry:'internet',city:'广州·广东',year:2008,url:'https://www.joysim.cn/walkInto/home',badge:'数字化服务·省级专精特新',featured:true},
+  {name:'海德（广州）国际物流集团有限公司',industry:'trade',city:'广州·广东',year:2008,url:'https://hydeindustry.com/cn/guanyuwomen-a9-1.html',badge:'国际物流与贸易',featured:true,position:'海外销售（官网列出，开放状态待确认）',salary:'官网未公开；详情请核对招聘页',checked:'2026-10-30'},
+  {name:'增城市金点食品有限公司',industry:'beverage',city:'广州·增城',year:2001,url:'https://www.gdjindian.cn/history.html',badge:'烘焙食品原料',featured:true},
+  {name:'立高食品股份有限公司',industry:'beverage',city:'广州·增城',year:2000,url:'https://www.ligaofoods.com/',badge:'烘焙食品',featured:true},
+  {name:'广州亿通食品机械设备有限公司',industry:'equipment',city:'广州·增城',year:2003,url:'https://www.ytongjx.com/list.asp?classid=6',badge:'食品机械设备',featured:true}
 ];
 
 (() => {
@@ -148,7 +163,7 @@ window.COMPANY_DIRECTORY = [
       (chosenRegion === 'other' && company.city !== '全国' && !inGuangdong(company.city)) ||
       (chosenRegion === 'national' && company.city === '全国'));
     const industryOrder = ['water', 'equipment', 'beverage', 'aquatic', 'logistics', 'internet', 'trade', 'finance', 'consumer'];
-    list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || a.year - b.year);
+    list.sort((a, b) => industryOrder.indexOf(a.industry) - industryOrder.indexOf(b.industry) || Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || a.year - b.year);
 
     const keywords = (role?.value || '').trim().toLocaleLowerCase();
     let keywordNote = '';
@@ -168,10 +183,14 @@ window.COMPANY_DIRECTORY = [
         <b>${esc(company.name)}</b>
         <small>${esc(company.city)} · 品牌 / 业务沿革始于 ${esc(company.year)} 年</small>
         <small>${esc(company.badge)} · 官网核对后再查看招聘公告</small>
+        <small>职位：${esc(company.position || '暂未核实，请查看官网招聘信息')}</small>
+        <small>薪资：${esc(company.salary || '待官网确认')}</small>
+        ${company.checked ? `<small>招聘信息核对：${esc(company.checked)}，请确认是否仍开放</small>` : ''}
         <a href="${esc(company.url)}" target="_blank" rel="noopener noreferrer">打开企业官网 / 招聘栏目 ↗</a>
       </article>`).join('');
     const total = directory.length;
-    const title = chosenSector === 'all' ? `企业目录：${list.length} 家` : `${esc(sectorNames[chosenSector])}：${list.length} 家`;
+    const categoryTotal = directory.filter(company => company.industry === chosenSector).length;
+    const title = chosenSector === 'all' ? `企业目录：${list.length} 家` : `${esc(sectorNames[chosenSector])}：筛选到 ${list.length} 家（本行业收录 ${categoryTotal} / 100 家）`;
     const regionLabel = region?.selectedOptions?.[0]?.textContent || '全部地区';
     const note = [`地区：${regionLabel}`, keywordNote, `共收录 ${total} 家企业。地区为目录中标注的企业所在地，具体岗位地点和待遇以官网公告为准。品牌沿革年份与法人注册时间可能不同。`].filter(Boolean).join('。');
     const showSalary = ['all','water','equipment'].includes(chosenSector) && ['all','zengcheng','guangzhou','guangdong'].includes(chosenRegion);
