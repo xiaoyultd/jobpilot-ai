@@ -19,4 +19,5 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
 @media(max-width:760px){.match-form{grid-template-columns:1fr;padding:16px}.match-actions{display:grid;grid-template-columns:1fr}.match-hint{font-size:11px}.portal-links{display:grid;grid-template-columns:1fr}}
 @media(max-width:760px){html{-webkit-text-size-adjust:100%}input,select,textarea{font-size:16px!important}}
 .search-result-card a{margin-top:auto;color:var(--green);font-size:12px;font-weight:700;text-decoration:none}.search-result-card a:active{opacity:.7}.search-result-card{overflow-wrap:anywhere}
+@media(max-width:760px){.search-result-grid{grid-template-columns:minmax(0,1fr)}.directory-card{min-height:0;padding:16px}.directory-card a{min-height:42px;display:flex;align-items:center}.match-actions button{min-height:48px}.match-form select,.match-form input{min-height:46px}}
 .modal.open[aria-hidden="true"]{display:none}

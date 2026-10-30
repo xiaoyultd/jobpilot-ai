@@ -35,7 +35,7 @@
         <div class="quick-grid">
           <button class="quick-card primary" data-action="adapt"><span class="card-icon">↗</span><small>最快提升面试率</small><h2>一键适配简历</h2><p>粘贴职位描述，30 秒生成更匹配的简历版本</p><b>开始适配 →</b></button>
           <button class="quick-card" data-action="analyze"><span class="card-icon purple">◎</span><small>发现隐藏问题</small><h2>深度分析简历</h2><p>从内容、结构、关键词等 6 个维度给出建议</p><b>立即分析 →</b></button>
-          <button class="quick-card" data-view-target="jobs"><span class="card-icon yellow">⌕</span><small>企业官网优先</small><h2>按条件搜索职位</h2><p>按岗位和作息偏好查20年以上企业、外企、国企及事业单位</p><b>去找机会 →</b></button>
+          <button class="quick-card" data-view-target="jobs"><span class="card-icon yellow">⌕</span><small>企业官网优先</small><h2>按行业找企业</h2><p>查看100家官网可查的企业，水相关行业优先</p><b>去找机会 →</b></button>
         </div>
         <div class="section-head"><div><p class="eyebrow">功能演示</p><h2>示例职位（非实时招聘信息）</h2></div><button class="text-btn" data-view-target="jobs">按条件搜索官网岗位 →</button></div>
         <div class="match-layout">
@@ -76,18 +76,16 @@
       </section>
 
       <section class="view" id="jobs">
-        <div class="page-title"><p class="eyebrow">先匹配职位，再找企业</p><h1>根据求职条件，搜索好单位的官网招聘</h1><p>填写目标岗位和条件，再分别查找成立满20年的企业、外企、国企或事业单位招聘。</p></div>
+        <div class="page-title"><p class="eyebrow">按行业找公司</p><h1>从自然搜索能找到的企业开始</h1><p>不限地区，整理100家官网可查、品牌有积淀的企业；水务环保、水处理、饮料食品、水产和港口物流优先。</p></div>
         <div class="match-form">
-          <label>想找什么岗位<input id="jobSearch" placeholder="例如：行政、人事、会计、客服、设备工程师" value=""></label>
-          <label>专业 / 技能 / 经验<input id="candidateSkills" placeholder="例如：英语四级、Excel、应届生、3年经验"></label>
-          <label>期望地点<select id="cityFilter" aria-label="期望地点"><option>增城及广州</option><option>增城</option><option>广州</option><option>广州及周边</option><option>广东</option></select></label>
-          <label>学历和身份<select id="candidateLevel"><option value="">不限</option><option>应届毕业生</option><option>大专</option><option>本科</option><option>硕士及以上</option></select></label>
-          <label>工作时间偏好<select id="workPreference"><option value="">不限</option><option>双休 / 朝九晚五</option><option>稳定、加班少</option><option>可接受倒班</option></select></label>
-          <label>待遇关注<input id="benefitsPreference" placeholder="例如：五险一金、年终奖、食宿"></label>
-          <div class="match-actions"><button type="button" class="solid" id="search500Btn">搜成立20年以上企业</button><button type="button" class="outline" id="searchForeignBtn">搜优质外企职位</button><button type="button" class="outline" id="searchSoeBtn">搜国企 / 事业单位</button><button type="button" class="outline" id="searchGoodBtn">搜增城优质企业</button></div>
-          <p class="match-hint">点类别后，结果会整理在本页：显示企业、职位、地点、要求和企业招聘官网入口。当前为已核验的职位快照，不是实时全网抓取；班次和待遇以企业公告为准。</p>
+          <label>想找什么岗位 / 行业<input id="jobSearch" placeholder="例如：水处理、行政、会计、运营、设备工程师" value=""></label>
+          <label>专业 / 技能 / 经验<input id="candidateSkills" placeholder="例如：环境工程、Excel、应届生、3年经验"></label>
+          <label>优先行业<select id="industryFilter" aria-label="优先行业"><option value="all">全部行业（100家，水相关优先）</option><option value="water">水务环保 / 水处理</option><option value="beverage">饮料 / 食品 / 乳品</option><option value="aquatic">水产 / 养殖 / 海洋食品</option><option value="logistics">港口 / 航运 / 物流</option><option value="equipment">水处理设备 / 制造</option><option value="consumer">成熟消费 / 医药 / 家电</option></select></label>
+          <div class="match-actions"><button type="button" class="solid" id="searchDirectoryBtn">搜索企业目录</button></div>
+          <p class="match-hint">不限地区，按行业查看。名单参考企业官网、官方老字号/优质中小企业名单、品牌历史和公开行业资料；公开渠道没有统一可信的企业官网自然流量数字，因此不展示虚构流量分数。八字五行仅作为你的行业偏好，不作为求职判断依据。</p>
+          <p class="match-hint">名单筛选参考：<a href="https://sw.gz.gov.cn/xxgk/tzgg/tz/content/post_10677014.html" target="_blank" rel="noopener noreferrer">广州市商务局公布的广州老字号名单</a>、<a href="https://gxj.gz.gov.cn/yw/tzgg/content/post_9225219.html" target="_blank" rel="noopener noreferrer">广州市工信局公开的优质中小企业名单</a>。并非目录内每家公司都获得上述认定。</p>
         </div>
-        <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>填写岗位和地点，选择企业类型</b><p>页面会按已核验的官方职位整理结果；点“查看官网岗位”可确认最新状态并投递。</p></div></div>
+        <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>选择行业后，点击“搜索企业目录”</b><p>会显示企业名称、行业、经营年份和真实官网入口；招聘以企业官网当前公告为准。</p></div></div>
         <div class="ad-free-tip"><b>手机 Edge 去广告设置</b><p>Edge 菜单 ⋯ → 设置 → 隐私和安全 → 内容拦截器 → 开启“阻止广告”；如需屏蔽全部广告，再关闭“允许可接受的广告”。</p><small>本应用不展示广告。搜索服务页面的推广位由搜索服务控制，网页应用不能自行安装或启用浏览器扩展。</small></div>
         <div class="page-title" style="margin-top:24px"><p class="eyebrow">官方求职入口</p><h2>增城及广州周边</h2></div>
         <div class="official-grid">
@@ -116,5 +114,6 @@
   <nav class="mobile-nav" aria-label="手机导航"><button class="active" data-view="home"><span>⌂</span>首页</button><button data-view="resume"><span>◫</span>简历</button><button data-view="jobs"><span>⌕</span>职位</button><button data-view="wechat"><span>◉</span>公众号</button><button data-view="track"><span>✓</span>进展</button></nav>
   <div class="toast" id="toast">已加入投递清单</div>
   <script src="app.js"></script>
+  <script src="company-directory.js"></script>
 </body>
 </html>
