@@ -1,0 +1,10 @@
+{
+  "name": "职途 AI 求职助手",
+  "short_name": "职途 AI",
+  "description": "简历分析、岗位适配与职位管理",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f5f0",
+  "theme_color": "#183f33",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

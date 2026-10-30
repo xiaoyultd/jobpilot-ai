@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <title>职途 AI｜聪明地找到适合你的工作</title>
+  <meta name="description" content="一站式简历分析、岗位适配和招聘信息聚合助手">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="职途 AI 首页"><span class="brand-mark">职</span><span>职途 <b>AI</b></span></a>
+      <nav aria-label="主导航">
+        <button class="nav-item active" data-view="home"><span>⌂</span>求职首页</button>
+        <button class="nav-item" data-view="resume"><span>◫</span>我的简历</button>
+        <button class="nav-item" data-view="jobs"><span>⌕</span>职位广场</button>
+        <button class="nav-item" data-view="wechat"><span>◉</span>公众号同步</button>
+        <button class="nav-item" data-view="track"><span>✓</span>投递进展</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-card"><span class="spark">✦</span><p><b>今日建议</b><br>完善一段项目经历，匹配度预计 +8%</p></div>
+        <button class="profile" title="点击修改求职档案"><span class="avatar" data-user-avatar>你</span><span><b data-user-name>我的求职档案</b><small>点击设置姓名与方向</small></span><span>•••</span></button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar"><button class="mobile-menu" aria-label="打开菜单">☰</button><div class="status"><span></span>AI 求职引擎已就绪</div><button class="bell" aria-label="消息">♢<i>3</i></button></header>
+
+      <section class="view active" id="home">
+        <div class="hero-copy"><p class="eyebrow">你好，<span data-user-name>求职者</span> 👋</p><h1>今天，离理想工作<br><em>再近一点。</em></h1><p>让 AI 帮你看懂机会、优化表达，把精力留给真正重要的选择。</p></div>
+        <div class="quick-grid">
+          <button class="quick-card primary" data-action="adapt"><span class="card-icon">↗</span><small>最快提升面试率</small><h2>一键适配简历</h2><p>粘贴职位描述，30 秒生成更匹配的简历版本</p><b>开始适配 →</b></button>
+          <button class="quick-card" data-action="analyze"><span class="card-icon purple">◎</span><small>发现隐藏问题</small><h2>深度分析简历</h2><p>从内容、结构、关键词等 6 个维度给出建议</p><b>立即分析 →</b></button>
+          <button class="quick-card" data-view-target="jobs"><span class="card-icon yellow">⌕</span><small>企业官网优先</small><h2>按条件搜索职位</h2><p>按岗位和作息偏好查五百强、外企、国企及事业单位</p><b>去找机会 →</b></button>
+        </div>
+        <div class="section-head"><div><p class="eyebrow">功能演示</p><h2>示例职位（非实时招聘信息）</h2></div><button class="text-btn" data-view-target="jobs">按条件搜索官网岗位 →</button></div>
+        <div class="match-layout">
+          <div class="job-list" id="homeJobs"></div>
+          <aside class="score-panel"><div class="ring"><strong>82</strong><small>求职竞争力</small></div><h3>状态不错，再推一把</h3><p>你的经历和目标岗位较匹配，补充数据成果后会更有说服力。</p><div class="score-row"><span>简历完整度</span><b>88%</b></div><div class="bar"><i style="width:88%"></i></div><div class="score-row"><span>目标清晰度</span><b>76%</b></div><div class="bar"><i style="width:76%"></i></div><button data-action="analyze">查看完整诊断</button></aside>
+        </div>
+      </section>
+
+      <section class="view" id="resume">
+        <div class="page-title"><p class="eyebrow">我的简历</p><h1>在手机上编辑你的简历</h1><p>填写真实经历，内容会自动保存在这台设备的浏览器中。</p></div>
+        <div class="resume-editor-layout">
+          <form class="resume-editor" id="resumeForm">
+            <div class="editor-section-title"><h2>基本信息</h2><span id="resumeSaveState">尚未填写</span></div>
+            <div class="resume-fields two-col">
+              <label>姓名<input name="name" id="resumeName" autocomplete="name" placeholder="填写姓名"></label>
+              <label>联系电话<input name="phone" id="resumePhone" autocomplete="tel" inputmode="tel" placeholder="填写手机号"></label>
+              <label>电子邮箱<input name="email" id="resumeEmail" autocomplete="email" inputmode="email" placeholder="填写邮箱"></label>
+              <label>期望岗位<input name="target" id="resumeTarget" placeholder="例如：行政专员、会计、设备工程师"></label>
+              <label>期望地点<input name="location" id="resumeLocation" placeholder="例如：增城、广州"></label>
+              <label>学历 / 毕业时间<input name="education" id="resumeEducation" placeholder="例如：本科 / 2027届"></label>
+            </div>
+            <label class="resume-wide-field">个人简介<textarea name="summary" id="resumeSummary" rows="4" placeholder="简单介绍工作年限、专业优势和求职方向"></textarea></label>
+            <label class="resume-wide-field">专业技能<textarea name="skills" id="resumeSkills" rows="3" placeholder="可填写办公软件、语言、证书、设备或专业技能"></textarea></label>
+            <label class="resume-wide-field">工作经历<textarea name="experience" id="resumeExperience" rows="6" placeholder="可写多段经历，每段包括：公司｜岗位｜时间；工作内容与成果。尽量写清数据、效率或质量提升。"></textarea></label>
+            <label class="resume-wide-field">项目 / 实习经历<textarea name="projects" id="resumeProjects" rows="4" placeholder="填写项目背景、你负责的工作、取得的结果；没有可留空"></textarea></label>
+            <div class="resume-editor-actions"><button type="submit" class="solid">保存简历</button><button type="button" class="outline" id="printResume">打印 / 导出 PDF</button></div>
+            <small class="resume-privacy">隐私说明：简历只保存在当前浏览器，不会自动上传。换设备后需要重新填写。</small>
+          </form>
+          <article class="resume-preview" id="resumePreview">
+            <div class="resume-head"><span class="avatar big" data-user-avatar>你</span><div><h2 id="previewName">你的姓名</h2><p id="previewMeta">填写期望岗位和地点</p></div><span class="tag green">简历预览</span></div><hr>
+            <div class="preview-contact" id="previewContact"></div>
+            <section><h3>个人简介</h3><p class="preview-text" id="previewSummary">填写后会显示在这里。</p></section>
+            <section><h3>专业技能</h3><p class="preview-text" id="previewSkills">填写后会显示在这里。</p></section>
+            <section><h3>工作经历</h3><p class="preview-text" id="previewExperience">填写后会显示在这里。</p></section>
+            <section><h3>项目 / 实习经历</h3><p class="preview-text" id="previewProjects">填写后会显示在这里。</p></section>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="jobs">
+        <div class="page-title"><p class="eyebrow">先匹配职位，再找企业</p><h1>根据求职条件，搜索好单位的官网招聘</h1><p>填写目标岗位和条件，再分别搜索五百强、外企、国企或事业单位的官方招聘信息。</p></div>
+        <div class="match-form">
+          <label>想找什么岗位<input id="jobSearch" placeholder="例如：行政、人事、会计、客服、设备工程师" value=""></label>
+          <label>专业 / 技能 / 经验<input id="candidateSkills" placeholder="例如：英语四级、Excel、应届生、3年经验"></label>
+          <label>期望地点<select id="cityFilter" aria-label="期望地点"><option>增城</option><option>广州</option><option>广州及周边</option><option>广东</option></select></label>
+          <label>学历和身份<select id="candidateLevel"><option value="">不限</option><option>应届毕业生</option><option>大专</option><option>本科</option><option>硕士及以上</option></select></label>
+          <label>工作时间偏好<select id="workPreference"><option value="">不限</option><option>双休 / 朝九晚五</option><option>稳定、加班少</option><option>可接受倒班</option></select></label>
+          <label>待遇关注<input id="benefitsPreference" placeholder="例如：五险一金、年终奖、食宿"></label>
+          <div class="match-actions"><button type="button" class="solid" id="search500Btn">搜五百强官网</button><button type="button" class="outline" id="searchForeignBtn">搜优质外企</button><button type="button" class="outline" id="searchSoeBtn">搜国企 / 事业单位</button></div>
+          <p class="match-hint">按所填条件生成多条 Bing 职位检索入口，优先查企业招聘官网、政府招聘站；应用内无广告。Bing 搜索页若显示推广结果，由搜索服务提供方控制。</p>
+        </div>
+        <div class="search-results-panel" id="searchResults" aria-live="polite"><div class="empty-state"><b>填写条件后，选择上方单位类型开始匹配</b><p>会生成多条不同的职位搜索入口；点开后在 Bing 查看实时结果。</p></div></div>
+        <div class="ad-free-tip"><b>手机 Edge 去广告设置</b><p>Edge 菜单 ⋯ → 设置 → 隐私和安全 → 内容拦截器 → 开启“阻止广告”；如需屏蔽全部广告，再关闭“允许可接受的广告”。</p><small>本应用不展示广告。搜索服务页面的推广位由搜索服务控制，网页应用不能自行安装或启用浏览器扩展。</small></div>
+        <div class="page-title" style="margin-top:24px"><p class="eyebrow">官方求职入口</p><h2>增城及广州周边</h2></div>
+        <div class="official-grid">
+          <a class="official-card" href="https://xyzp.51job.com/gacgroup2027/jobs.html"><span class="tag green">增城新塘 · 校招</span><h3>广汽丰田</h3><p>广汽集团2027届校招页面含增城新塘岗位，适合2027届毕业生。</p><b>打开官方校招职位 →</b></a>
+          <a class="official-card" href="https://www.hotjob.cn/wt/ghac/web/index?brandCode=1"><span class="tag">增城 · 社招/校招</span><h3>广汽本田</h3><p>进入招聘平台后选择社会招聘或校园招聘，查看当前开放职位。</p><b>打开企业招聘平台 →</b></a>
+          <a class="official-card" href="https://www.hitachi.com.cn/about/network/group/auto-gz2.html"><span class="tag">增城永宁 · 企业官网</span><h3>日立安斯泰莫汽车马达系统（广州）</h3><p>日立中国官方公司页面可核对地址与联系方式；暂无确认的在线职位页。</p><b>查看日立官方公司信息 →</b></a>
+          <a class="official-card" href="https://app.mokahr.com/campus-recruitment/zensemi/142586#/"><span class="tag green">增城 · 2027届校招</span><h3>广州增芯科技</h3><p>半导体工艺、设备、制造、品质、IT等岗位，招聘对象以2027届毕业生为主。</p><b>打开招聘官网投递 →</b></a>
+        </div>
+        <div class="portal-links"><a href="https://ggfw.hrss.gd.gov.cn/recruitment/internet/main/#/home">广东公共求职招聘服务平台</a><a href="https://job.iguopin.com/app">国聘：国企招聘专区</a><a href="https://www.zc.gov.cn/zx/ztjj/rcfw/zpxx/index.html">增城区政府招聘公告</a></div>
+        <p class="result-count">每条入口会按当前岗位、地点、学历、作息和待遇重新组合查询；职位是否在招请以企业官网公告为准。</p>
+      </section>
+
+      <section class="view" id="wechat">
+        <div class="page-title"><p class="eyebrow">招聘内容同步</p><h1>把公众号招聘文章，变成清晰的职位机会</h1><p>授权有管理权限的公众号后，同步其可访问的图文内容并提取招聘信息。</p></div>
+        <div class="wechat-layout"><div class="wechat-main"><div class="connect-card"><div class="connect-symbol">◉</div><div class="connect-copy"><span class="tag green">待配置开放平台</span><h2>连接微信公众号</h2><p>完成第三方平台资质与接口配置后，公众号管理员可在微信授权页确认授权范围。</p><ul><li>只同步授权账号允许访问的内容</li><li>不会读取个人微信聊天或其他未授权账号</li><li>授权凭证由服务端加密保存</li></ul><button id="authorizeWechat" class="solid">开始公众号授权</button><small>上线前需要配置开放平台 AppID、AppSecret、授权回调域名和已审核权限集。</small></div></div><div class="sync-panel"><div><span class="eyebrow">文章同步</span><h2>招聘文章库</h2><button id="syncArticles" class="outline">同步最新文章</button></div><div id="articleState" class="empty-state"><span>▤</span><b>尚未连接公众号</b><p>授权成功后，这里会显示同步时间、文章标题和识别到的职位。</p></div></div></div><aside class="wechat-side"><h3>授权后会做什么</h3><ol><li><b>管理员确认</b><small>跳转微信官方授权页，由管理员选择公众号和权限。</small></li><li><b>拉取可访问素材</b><small>服务端按授权接口范围同步图文素材列表。</small></li><li><b>识别职位信息</b><small>提取公司、岗位、城市、薪资和原文链接，供人工核对。</small></li></ol><div class="notice">当前为授权接入准备页。未配置微信开放平台应用前，无法真正发起授权或抓取。</div></aside></div>
+      </section>
+
+      <section class="view" id="track">
+        <div class="page-title"><p class="eyebrow">投递管理</p><h1>每一次尝试，都有迹可循</h1><p>集中管理岗位、面试和跟进提醒，不错过关键节点。</p></div>
+        <div class="kanban"><div class="lane"><h3>准备投递 <span>2</span></h3><div class="track-card"><b>高级产品运营</b><p>云杉互动 · 上海</p><small>简历匹配度 92%</small></div><div class="track-card"><b>用户增长运营</b><p>拾光科技 · 杭州</p><small>待补充项目数据</small></div></div><div class="lane"><h3>已投递 <span>1</span></h3><div class="track-card"><b>产品运营专家</b><p>有山网络 · 上海</p><small>昨天投递</small></div></div><div class="lane highlight"><h3>面试中 <span>1</span></h3><div class="track-card"><b>增长策略运营</b><p>极星出行 · 上海</p><small>明天 14:00 · 一面</small><button>准备面试</button></div></div></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="actionModal" aria-hidden="true"><div class="modal-card"><button class="close" aria-label="关闭">×</button><div class="modal-step active" data-step="input"><span class="modal-icon">✦</span><h2 id="modalTitle">一键适配简历</h2><p id="modalDesc">粘贴职位描述，AI 会找出关键词并调整表达重点。</p><label>目标职位描述</label><textarea id="jdInput" placeholder="粘贴完整的职位描述……">负责产品用户增长及运营策略制定，通过数据分析发现增长机会；搭建用户分层体系，持续优化转化路径。</textarea><button class="solid wide" id="runAi">开始智能适配 <span>↗</span></button><small>你的简历内容仅用于本次分析，不会公开</small></div><div class="modal-step" data-step="loading"><div class="loader"></div><h2>正在读懂职位与简历…</h2><p id="loadingText">提取岗位核心关键词</p></div><div class="modal-step" data-step="result"><span class="modal-icon success">✓</span><h2>适配完成，匹配度提升至 92%</h2><p>重点强化了“用户增长、数据分析、用户分层”三项能力。</p><div class="change-box"><small>优化建议</small><b>把“提升用户活跃度”改为：</b><p>基于用户分层制定精细化运营策略，推动月活用户提升 26%，核心转化路径效率提升 18%。</p></div><button class="solid wide close-result">保存为新版本</button></div></div></div>
+  <nav class="mobile-nav" aria-label="手机导航"><button class="active" data-view="home"><span>⌂</span>首页</button><button data-view="resume"><span>◫</span>简历</button><button data-view="jobs"><span>⌕</span>职位</button><button data-view="wechat"><span>◉</span>公众号</button><button data-view="track"><span>✓</span>进展</button></nav>
+  <div class="toast" id="toast">已加入投递清单</div>
+  <script src="app.js"></script>
+</body>
+</html>
