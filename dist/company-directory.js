@@ -126,6 +126,8 @@ window.COMPANY_DIRECTORY = [
   {name:'广州宏天软件股份有限公司',industry:'internet',city:'广州·广东',year:2008,url:'https://www.hotent.com/Jobs/',badge:'企业软件·官网招聘',featured:true,position:'技术支持（广州，官网标注长期招聘）',salary:'官网未公开；详情请核对招聘页',checked:'2026-10-30'},
   {name:'广州市景心科技股份有限公司',industry:'internet',city:'广州·广东',year:2008,url:'https://www.joysim.cn/walkInto/home',badge:'数字化服务·省级专精特新',featured:true},
   {name:'海德（广州）国际物流集团有限公司',industry:'trade',city:'广州·广东',year:2008,url:'https://hydeindustry.com/cn/guanyuwomen-a9-1.html',badge:'国际物流与贸易',featured:true,position:'海外销售（官网列出，开放状态待确认）',salary:'官网未公开；详情请核对招聘页',checked:'2026-10-30'},
+  {name:'广州华研精密机械股份有限公司',industry:'equipment',city:'广州·增城',year:2002,url:'https://www.gzhuayan.com/',badge:'包装设备·增城',featured:true},
+  {name:'五羊—本田摩托（广州）有限公司',industry:'consumer',city:'广州·增城',year:1992,url:'https://www.wuyang-honda.com/',badge:'摩托车制造·增城',featured:true},
   {name:'增城市金点食品有限公司',industry:'beverage',city:'广州·增城',year:2001,url:'https://www.gdjindian.cn/history.html',badge:'烘焙食品原料',featured:true},
   {name:'立高食品股份有限公司',industry:'beverage',city:'广州·增城',year:2000,url:'https://www.ligaofoods.com/',badge:'烘焙食品',featured:true},
   {name:'广州亿通食品机械设备有限公司',industry:'equipment',city:'广州·增城',year:2003,url:'https://www.ytongjx.com/list.asp?classid=6',badge:'食品机械设备',featured:true},
