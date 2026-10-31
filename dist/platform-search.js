@@ -10,6 +10,7 @@
       {names:['广电计量检测集团','广电计量检测集团股份有限公司','广电计量'], company:'广电计量', title:'材料检测主管工程师（材料化学/技术支持）', salary:'1–1.5万元/月', place:'具体地点请查看企业页', details:'5–10年 · 本科', url:'https://www.zhaopin.com/companydetail/CC138044056.htm', source:'智联企业职位页'}
     ],
     boss: [
+      {names:['立高食品股份有限公司','立高食品'], company:'立高食品（品牌）', title:'理货员/仓储管理员', salary:'5–8千元/月', place:'广州·增城·石滩镇', details:'1–3年 · 学历不限', url:'https://m.zhipin.com/job_detail/93c1f1d7c57f5ec903x_0tu4GVBT.html', source:'BOSS职位详情（可能需要登录或验证）', note:'平台展示品牌名，具体签约用人单位尚未核实；来源为平台历史列表，岗位状态待确认。'},
       {names:['广电计量检测集团','广电计量检测集团股份有限公司','广电计量'], company:'广电计量', title:'可靠性测试工程师（广州）', salary:'5–9K·13薪', place:'广州·番禺·石基', details:'1–3年 · 大专', url:'https://www.zhipin.com/job_detail/cf5d7414ba21c04e1XZ_2t-4GVJY.html', source:'BOSS职位详情（可能需要登录或验证）'}
     ],
     '51job': [
@@ -24,27 +25,36 @@
   (window.COMPANY_DIRECTORY || []).forEach(company => {const option=document.createElement('option');option.value=company.name;datalist.appendChild(option);});
   function line(tag, text, className) {const element=document.createElement(tag);element.textContent=text;if(className) element.className=className;return element;}
   function link(url,text) {const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=text+' ↗';return a;}
-  document.querySelectorAll('.platform-form').forEach(form => form.addEventListener('submit', event => {
-    event.preventDefault();
+  document.querySelectorAll('.platform-form').forEach(form => {
+    const all=records[form.dataset.platform] || [];
+    const stats=form.parentElement.querySelector('.platform-stats');
+    stats.textContent=`已整理 ${all.length} 条历史线索，涉及 ${new Set(all.map(record => record.names[0])).size} 家企业或品牌；并非实时在招数量。`;
+    function render(showAll) {
     const query=form.elements.company.value.trim();
     const output=form.parentElement.querySelector('.platform-results');
     output.replaceChildren();
-    if (!query) {output.appendChild(line('p','请先输入或选择企业名称。'));return;}
-    const found=(records[form.dataset.platform] || []).filter(record => record.names.some(name => normalize(name)===normalize(query)));
+    if (!query && !showAll) {output.appendChild(line('p','请先输入或选择企业名称。'));return;}
+    const found=showAll ? all.slice().sort((a,b)=>a.company.localeCompare(b.company,'zh-CN')) : all.filter(record => record.names.some(name => normalize(name)===normalize(query)));
     if (!found.length) {
       output.appendChild(line('p','这家企业暂无已整理的平台职位记录，不代表企业没有招聘。请核对企业全称，或到平台搜索企业名称。'));
       output.appendChild(link(homes[form.dataset.platform],'打开招聘平台，手动搜索企业'));
       return;
     }
-    output.appendChild(line('p',`找到 ${found.length} 条该企业的历史线索，不能确认现在仍在招聘。`));
+    output.appendChild(line('p',`找到 ${found.length} 条${showAll ? '已整理的' : '该企业的'}历史线索，不能确认现在仍在招聘。`));
     found.forEach(record => {
       const card=document.createElement('article');
       card.appendChild(line('h3',record.title));
       card.appendChild(line('p',`${record.company} · ${record.place}`));
       card.appendChild(line('strong',`${record.salary}　${record.details}`));
       card.appendChild(line('p','整理日期：2026-10-31。来源为平台公开页面或搜索索引，岗位状态、薪资和单位需再次核实。','platform-note'));
+      if (record.note) card.appendChild(line('p',record.note,'platform-note'));
       card.appendChild(link(record.url,record.source));
+      const company=(window.COMPANY_DIRECTORY || []).find(item => record.names.some(name => normalize(name)===normalize(item.name)));
+      if (company) {card.appendChild(document.createElement('br'));card.appendChild(link(company.url,'查看企业官网'));}
       output.appendChild(card);
     });
-  }));
+    }
+    form.addEventListener('submit', event => {event.preventDefault();render(false);});
+    form.querySelector('[data-show-all]').addEventListener('click', () => render(true));
+  });
 })();

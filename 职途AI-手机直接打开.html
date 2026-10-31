@@ -34,6 +34,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
 .modal.open[aria-hidden="true"]{display:none}
 
 .platform-intro{margin:28px 0 16px}.platform-intro h2{margin:0 0 8px;font-size:22px}.platform-intro>p:last-child{font-size:13px;line-height:1.7;color:var(--muted)}.platform-form{display:flex;align-items:end;gap:10px;margin:16px 0}.platform-form label{display:grid;gap:7px;flex:1;min-width:0;font-size:13px;font-weight:700;color:#506158}.platform-form input{width:100%;min-height:46px;border:1px solid #cad8ce;border-radius:10px;background:#fff;padding:10px 12px;font-size:16px}.platform-form button{min-height:46px}.platform-results{font-size:13px;line-height:1.7;color:#536b5e}.platform-results article{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:10px}.platform-results h3{font-size:16px;color:var(--ink);margin:0 0 7px}.platform-results p{margin:6px 0}.platform-results a{display:inline-flex;align-items:center;min-height:44px;color:var(--green);font-weight:700;overflow-wrap:anywhere}.platform-note{color:#8a5a26}.platform-results strong{color:#173f33}@media(max-width:760px){.platform-form{display:grid;grid-template-columns:minmax(0,1fr)}.platform-form button{width:100%;min-height:48px}}
+
+.platform-stats{font-size:13px;color:#536b5e}.platform-all{min-height:46px;padding:10px 14px;border:1px solid #9fb9a6;border-radius:10px;background:#fff;color:#173f33;cursor:pointer}@media(max-width:760px){.platform-all{width:100%}}
 </style>
 </head>
 <body>
@@ -105,9 +107,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","
         <div class="page-title"><p class="eyebrow">企业目录</p><h1>找到值得了解的企业</h1><p>选行业或输入企业名称，查看公司官网和招聘入口。</p></div>
         <div class="platform-intro"><p class="eyebrow">按企业找工作</p><h2>三个招聘平台，逐家查找</h2><p>先选择或输入公司，再查看已整理的职位线索。目标是每个平台收集100个靠谱职位，目前数量尚未达到。下方是人工整理的历史线索，不是实时抓取；平台页面可能变动，投递前请确认用人单位、地点和是否仍在招聘。</p></div>
         <datalist id="platformCompanies"></datalist>
-        <details class="local-companies platform-module" id="platform-zhilian"><summary><span>智联招聘 · 按企业找职位</span><small>输入企业名称，查看已整理的记录</small></summary><form class="platform-form" data-platform="zhilian"><label>企业名称<input name="company" type="search" list="platformCompanies" value="广电计量检测集团" placeholder="选择或输入企业名称" autocomplete="off"></label><button class="solid" type="submit">查看该企业的记录</button></form><div class="platform-results" aria-live="polite"><p>点击按钮查看记录，也可以换一家企业。</p></div></details>
-        <details class="local-companies platform-module" id="platform-boss"><summary><span>BOSS直聘 · 按企业找职位</span><small>输入企业名称，查看已整理的记录</small></summary><form class="platform-form" data-platform="boss"><label>企业名称<input name="company" type="search" list="platformCompanies" value="广电计量检测集团" placeholder="选择或输入企业名称" autocomplete="off"></label><button class="solid" type="submit">查看该企业的记录</button></form><div class="platform-results" aria-live="polite"><p>点击按钮查看记录，也可以换一家企业。</p></div></details>
-        <details class="local-companies platform-module" id="platform-51job"><summary><span>前程无忧 · 按企业找职位</span><small>输入企业名称，查看已整理的记录</small></summary><form class="platform-form" data-platform="51job"><label>企业名称<input name="company" type="search" list="platformCompanies" value="广州邦禾检测技术有限公司" placeholder="选择或输入企业名称" autocomplete="off"></label><button class="solid" type="submit">查看该企业的记录</button></form><div class="platform-results" aria-live="polite"><p>点击按钮查看记录，也可以换一家企业。</p></div></details>
+        <details class="local-companies platform-module" id="platform-zhilian"><summary><span>智联招聘 · 按企业找职位</span><small>输入企业名称，查看已整理的记录</small></summary><p class="platform-stats" aria-live="polite"></p><form class="platform-form" data-platform="zhilian"><label>企业名称<input name="company" type="search" list="platformCompanies" value="广电计量检测集团" placeholder="选择或输入企业名称" autocomplete="off"></label><button class="solid" type="submit">查看该企业的记录</button><button class="outline platform-all" type="button" data-show-all>查看全部线索</button></form><div class="platform-results" aria-live="polite"><p>点击按钮查看记录，也可以换一家企业。</p></div></details>
+        <details class="local-companies platform-module" id="platform-boss"><summary><span>BOSS直聘 · 按企业找职位</span><small>输入企业名称，查看已整理的记录</small></summary><p class="platform-stats" aria-live="polite"></p><form class="platform-form" data-platform="boss"><label>企业名称<input name="company" type="search" list="platformCompanies" value="广电计量检测集团" placeholder="选择或输入企业名称" autocomplete="off"></label><button class="solid" type="submit">查看该企业的记录</button><button class="outline platform-all" type="button" data-show-all>查看全部线索</button></form><div class="platform-results" aria-live="polite"><p>点击按钮查看记录，也可以换一家企业。</p></div></details>
+        <details class="local-companies platform-module" id="platform-51job"><summary><span>前程无忧 · 按企业找职位</span><small>输入企业名称，查看已整理的记录</small></summary><p class="platform-stats" aria-live="polite"></p><form class="platform-form" data-platform="51job"><label>企业名称<input name="company" type="search" list="platformCompanies" value="广州邦禾检测技术有限公司" placeholder="选择或输入企业名称" autocomplete="off"></label><button class="solid" type="submit">查看该企业的记录</button><button class="outline platform-all" type="button" data-show-all>查看全部线索</button></form><div class="platform-results" aria-live="polite"><p>点击按钮查看记录，也可以换一家企业。</p></div></details>
         <details class="local-companies" id="latestHiring" open><summary><span>近期官网职位</span><small>显示核对日期，超过7天会提示重新核实</small></summary><div id="latestHiringBody" aria-live="polite"><p>正在整理官网职位……</p></div></details>
         <details class="local-companies" id="heritageHiring"><summary><span>老字号招聘查询 · 11家</span><small>点击展开，逐家查看官网查询结果</small></summary><p>查询范围为本目录中标记为老字号的11家，核对日期：2026-10-30。本次没有从可读取的官网页面确认仍开放的具体岗位；下列“未核实”不等于企业没有招聘。页面不会自动更新。</p><div class="local-company-grid">
           <article><b>立白科技集团</b><span>2027届校招线索 · 岗位状态需官网确认</span><p>高校发布2027届校招信息，官网招聘系统的岗位内容未能直接读取；薪资和工作地点以具体职位为准。</p><a href="https://zhaopin.liby.com.cn/campus" target="_blank" rel="noopener noreferrer">打开官方校招入口 ↗</a><a href="https://scdc.jnu.edu.cn/teachin/view/id/193275" target="_blank" rel="noopener noreferrer">查看高校公告 ↗</a></article>
@@ -504,6 +506,7 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
       {names:['广电计量检测集团','广电计量检测集团股份有限公司','广电计量'], company:'广电计量', title:'材料检测主管工程师（材料化学/技术支持）', salary:'1–1.5万元/月', place:'具体地点请查看企业页', details:'5–10年 · 本科', url:'https://www.zhaopin.com/companydetail/CC138044056.htm', source:'智联企业职位页'}
     ],
     boss: [
+      {names:['立高食品股份有限公司','立高食品'], company:'立高食品（品牌）', title:'理货员/仓储管理员', salary:'5–8千元/月', place:'广州·增城·石滩镇', details:'1–3年 · 学历不限', url:'https://m.zhipin.com/job_detail/93c1f1d7c57f5ec903x_0tu4GVBT.html', source:'BOSS职位详情（可能需要登录或验证）', note:'平台展示品牌名，具体签约用人单位尚未核实；来源为平台历史列表，岗位状态待确认。'},
       {names:['广电计量检测集团','广电计量检测集团股份有限公司','广电计量'], company:'广电计量', title:'可靠性测试工程师（广州）', salary:'5–9K·13薪', place:'广州·番禺·石基', details:'1–3年 · 大专', url:'https://www.zhipin.com/job_detail/cf5d7414ba21c04e1XZ_2t-4GVJY.html', source:'BOSS职位详情（可能需要登录或验证）'}
     ],
     '51job': [
@@ -518,29 +521,38 @@ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.
   (window.COMPANY_DIRECTORY || []).forEach(company => {const option=document.createElement('option');option.value=company.name;datalist.appendChild(option);});
   function line(tag, text, className) {const element=document.createElement(tag);element.textContent=text;if(className) element.className=className;return element;}
   function link(url,text) {const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=text+' ↗';return a;}
-  document.querySelectorAll('.platform-form').forEach(form => form.addEventListener('submit', event => {
-    event.preventDefault();
+  document.querySelectorAll('.platform-form').forEach(form => {
+    const all=records[form.dataset.platform] || [];
+    const stats=form.parentElement.querySelector('.platform-stats');
+    stats.textContent=`已整理 ${all.length} 条历史线索，涉及 ${new Set(all.map(record => record.names[0])).size} 家企业或品牌；并非实时在招数量。`;
+    function render(showAll) {
     const query=form.elements.company.value.trim();
     const output=form.parentElement.querySelector('.platform-results');
     output.replaceChildren();
-    if (!query) {output.appendChild(line('p','请先输入或选择企业名称。'));return;}
-    const found=(records[form.dataset.platform] || []).filter(record => record.names.some(name => normalize(name)===normalize(query)));
+    if (!query && !showAll) {output.appendChild(line('p','请先输入或选择企业名称。'));return;}
+    const found=showAll ? all.slice().sort((a,b)=>a.company.localeCompare(b.company,'zh-CN')) : all.filter(record => record.names.some(name => normalize(name)===normalize(query)));
     if (!found.length) {
       output.appendChild(line('p','这家企业暂无已整理的平台职位记录，不代表企业没有招聘。请核对企业全称，或到平台搜索企业名称。'));
       output.appendChild(link(homes[form.dataset.platform],'打开招聘平台，手动搜索企业'));
       return;
     }
-    output.appendChild(line('p',`找到 ${found.length} 条该企业的历史线索，不能确认现在仍在招聘。`));
+    output.appendChild(line('p',`找到 ${found.length} 条${showAll ? '已整理的' : '该企业的'}历史线索，不能确认现在仍在招聘。`));
     found.forEach(record => {
       const card=document.createElement('article');
       card.appendChild(line('h3',record.title));
       card.appendChild(line('p',`${record.company} · ${record.place}`));
       card.appendChild(line('strong',`${record.salary}　${record.details}`));
       card.appendChild(line('p','整理日期：2026-10-31。来源为平台公开页面或搜索索引，岗位状态、薪资和单位需再次核实。','platform-note'));
+      if (record.note) card.appendChild(line('p',record.note,'platform-note'));
       card.appendChild(link(record.url,record.source));
+      const company=(window.COMPANY_DIRECTORY || []).find(item => record.names.some(name => normalize(name)===normalize(item.name)));
+      if (company) {card.appendChild(document.createElement('br'));card.appendChild(link(company.url,'查看企业官网'));}
       output.appendChild(card);
     });
-  }));
+    }
+    form.addEventListener('submit', event => {event.preventDefault();render(false);});
+    form.querySelector('[data-show-all]').addEventListener('click', () => render(true));
+  });
 })();
 </script>
 </body>
